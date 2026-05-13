@@ -1,0 +1,48 @@
+Index: ms-inventario/src/main/resources/db/migration/V2__datos.sql
+===================================================================
+diff --git a/ms-inventario/src/main/resources/db/migration/V2__datos.sql b/ms-inventario/src/main/resources/db/migration/V2__datos.sql
+new file mode 100644
+--- /dev/null	(date 1778701987059)
++++ b/ms-inventario/src/main/resources/db/migration/V2__datos.sql	(date 1778701987059)
+@@ -0,0 +1,11 @@
++
++
++INSERT INTO inventario (producto_id, ubicacion_bodega, cantidad_disponible, stock_minimo_alerta, activo, fecha_ultima_revision) VALUES
++(1, 'Pasillo 4, Estante A', 150, 20, true, '2026-05-10'),
++(2, 'Pasillo 2, Estante B', 5, 10, true, '2026-05-12'),
++(3, 'Zona Fría, Rack 1', 0, 50, false, '2026-05-01');
++
++INSERT INTO movimiento_stock (inventario_id, tipo_movimiento, motivo_razon, cantidad_moviendo, aprobado, fecha_movimiento) VALUES
++(1, 'ENTRADA', 'Compra a proveedor', 50, true, '2026-05-11'),
++(1, 'SALIDA', 'Venta Pedido 100', 2, true, '2026-05-13 '),
++(2, 'MERMA', 'Producto dañado en manipulación', 1, false, '2026-05-13 ');
+\ No newline at end of file
+Index: ms-inventario/src/main/resources/db/migration/V1__init.sql
+===================================================================
+diff --git a/ms-inventario/src/main/resources/db/migration/V1__init.sql b/ms-inventario/src/main/resources/db/migration/V1__init.sql
+new file mode 100644
+--- /dev/null	(date 1778702062670)
++++ b/ms-inventario/src/main/resources/db/migration/V1__init.sql	(date 1778702062670)
+@@ -0,0 +1,21 @@
++
++CREATE TABLE IF NOT EXISTS inventario (
++    id INT AUTO_INCREMENT PRIMARY KEY,
++    producto_id INT NOT NULL,
++    ubicacion_bodega VARCHAR(100) NOT NULL,
++    cantidad_disponible INT NOT NULL,
++    stock_minimo_alerta INT NOT NULL,
++    activo BOOLEAN NOT NULL,
++    fecha_ultima_revision DATE NOT NULL
++);
++
++CREATE TABLE IF NOT EXISTS movimiento_stock (
++    id INT AUTO_INCREMENT PRIMARY KEY,
++    inventario_id INT NOT NULL,
++    tipo_movimiento VARCHAR(50) NOT NULL,
++    motivo_razon VARCHAR(200),
++    cantidad_moviendo INT NOT NULL,
++    aprobado BOOLEAN NOT NULL,
++    fecha_movimiento DATETIME NOT NULL,
++ FOREIGN KEY (inventario_id) REFERENCES inventario(id)
++);
+\ No newline at end of file
