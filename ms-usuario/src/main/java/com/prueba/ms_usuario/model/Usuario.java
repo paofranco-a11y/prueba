@@ -29,7 +29,7 @@ public class Usuario {
     private Integer edad;
 
     @Column(nullable = false)
-    private Boolean activo = true;
+    private boolean activo = true;
 
     @Column(nullable = false)
     private LocalDate fechaRegistro;
