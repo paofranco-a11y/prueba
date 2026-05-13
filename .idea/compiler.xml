@@ -2,7 +2,8 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-      <profile name="Annotation profile for ms-proveedores" enabled="true">
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Annotation profile for ms-usuario" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -10,6 +11,7 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
         </processorPath>
         <module name="ms-sucursales" />
+        <module name="ms-productos" />
         <module name="ms-usuario" />
         <module name="ms-pagos" />
         <module name="ms-proveedores" />
@@ -19,6 +21,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="ms-pagos" options="-parameters" />
+      <module name="ms-productos" options="-parameters" />
       <module name="ms-proveedores" options="-parameters" />
       <module name="ms-sucursales" options="-parameters" />
       <module name="ms-usuario" options="-parameters" />

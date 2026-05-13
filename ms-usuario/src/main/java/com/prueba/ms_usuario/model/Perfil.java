@@ -25,7 +25,7 @@ public class Perfil {
     private String descripcion;
 
     @Column(nullable = false)
-    private Boolean verificado = false;
+    private boolean verificado = false;
 
     @Column(nullable = false)
     private LocalDate fechaCreacion;
