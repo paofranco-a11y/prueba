@@ -4,7 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="800adc69-ea98-400f-bc39-6686c951a518" name="Changes" comment="" />
+    <list default="true" id="800adc69-ea98-400f-bc39-6686c951a518" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/cliente/ProductoCliente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/cliente/UsuarioCliente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/controller/PedidoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/service/PedidoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/controller/InventarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/controller/InventarioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/service/InventarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/service/InventarioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-pedidos/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/resources/db/migration/V1__init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/resources/db/migration/V1__init.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/test/java/com/prueba/ms_pedidos/MsPedidosApplicationTests.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +29,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -25,18 +41,18 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "nasheii66"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;nasheii66&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/paofranco-a11y/prueba.git",
-    "accountId": "87d8d66b-36c4-47cf-b16c-67e263053522"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/paofranco-a11y/prueba.git&quot;,
+    &quot;accountId&quot;: &quot;87d8d66b-36c4-47cf-b16c-67e263053522&quot;
   }
-}]]></component>
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -44,10 +60,10 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4,
-  "fromUser": false
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4,
+  &quot;fromUser&quot;: false
+}</component>
   <component name="ProjectId" id="3DgO0rVNElmBTlVICbrRtPRJUu9" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -55,17 +71,23 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Maven.ms-pedidos [clean].executor": "Run",
+    "Maven.ms-pedidos [install].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.MsInventarioApplication.executor": "Run",
     "Spring Boot.MsPedidosApplication.executor": "Run",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "ramaOliver",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/olive/OneDrive/Desktop/proyecto",
     "node.js.detected.package.eslint": "true",
@@ -107,7 +129,12 @@
       </map>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.MsPedidosApplication">
+    <configuration name="V1__init.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/ms-pedidos/src/main/resources/db/migration/V1__init.sql" />
+      <script-mode>FILE</script-mode>
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Prueba2" />
       <method v="2">
@@ -161,6 +188,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Database Script.V1__init.sql" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -169,11 +201,33 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1778700025924</updated>
-      <workItem from="1778700026952" duration="21670000" />
+      <workItem from="1778700026952" duration="26195000" />
+      <workItem from="1778732287414" duration="2788000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.hibernate.tool.schema.spi.SchemaManagementException" package="org.hibernate.tool.schema.spi" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

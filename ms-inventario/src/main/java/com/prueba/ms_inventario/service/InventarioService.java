@@ -40,19 +40,17 @@ public class InventarioService {
                 .map(inventarioMapper::toDTO)
                 .orElseThrow(() -> {
                     log.error("Error: Inventario no encontrado con ID: {}", id);
-                    return new ResourceNotFoundException("Inventario no encontrado con ID: " + id);
+                    return new ResourceNotFoundException("Inventario no encontrado con ID " + id);
                 });
     }
 
-
     public InventarioResponseDTO crear(InventarioRequestDTO dto) {
         log.info("Iniciando creación de inventario para producto ID: {}", dto.getProductoId());
-        // Intento de validación con el otro microservicio (Feign)
         try {
             productoCliente.validarProducto(dto.getProductoId());
             log.info("Producto validado correctamente");
         } catch (Exception e) {
-            log.warn("No se pudo conectar con ms-productos. Se procede con la creación local.");
+            log.warn("No se pudo conectar con ms-productos. Se procede con la creación local");
         }
 
         Inventario nuevo = inventarioMapper.toEntity(dto);
@@ -63,13 +61,23 @@ public class InventarioService {
     }
 
 
-
-
-
-
-
-
-
-
-
+    public void eliminar(Integer id) {
+        log.info("Eliminando producto del inventario ID: {}", id);
+        Inventario producto = inventarioRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("No se puede eliminar el Producto inexistente con ID: " + id));
+        inventarioRepository.delete(producto);
+        log.info("Producto eliminado correctamente");
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+

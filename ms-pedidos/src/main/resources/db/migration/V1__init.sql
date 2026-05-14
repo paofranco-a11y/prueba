@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS pedidos (
     cliente_id INT NOT NULL,
     codigo_seguimiento VARCHAR(50) NOT NULL,
     fecha_pedido DATETIME DEFAULT CURRENT_TIMESTAMP,
-    total DECIMAL(10, 2) NOT NULL,
+    total DOUBLE (10, 2) NOT NULL,
     pagado BOOLEAN DEFAULT FALSE,
     direccion_envio VARCHAR(100) NOT NULL
     );
@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS detalles_pedidos (
     pedido_id INT NOT NULL,
     producto_id INT NOT NULL,
     cantidad INT NOT NULL,
-    precio_unitario DECIMAL(10, 2) NOT NULL,
+    precio_unitario DOUBLE (10, 2) NOT NULL,
     descuento_aplicado BOOLEAN DEFAULT FALSE,
     fecha_agregado DATETIME DEFAULT CURRENT_TIMESTAMP,
     notas_adicionales VARCHAR(100),

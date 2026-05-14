@@ -22,7 +22,7 @@ public class InventarioController {
     @Autowired
     private InventarioService inventarioService;
 
-    @GetMapping("/disponibles")
+    @GetMapping
     public ResponseEntity<List<InventarioResponseDTO>> listarTodo() {
         log.info("GET /api/v1/inventario - Listar todos");
         return ResponseEntity.ok(inventarioService.listarTodos());
@@ -41,4 +41,9 @@ public class InventarioController {
         return new ResponseEntity<>(creado, HttpStatus.CREATED);
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> eliminar(@PathVariable Integer id) {
+        inventarioService.eliminar(id);
+        return ResponseEntity.noContent().build();
+    }
 }
