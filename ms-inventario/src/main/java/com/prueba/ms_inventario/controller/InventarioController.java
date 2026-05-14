@@ -22,7 +22,7 @@ public class InventarioController {
     @Autowired
     private InventarioService inventarioService;
 
-    @GetMapping
+    @GetMapping("/disponibles")
     public ResponseEntity<List<InventarioResponseDTO>> listarTodo() {
         log.info("GET /api/v1/inventario - Listar todos");
         return ResponseEntity.ok(inventarioService.listarTodos());
@@ -36,7 +36,7 @@ public class InventarioController {
 
     @PostMapping
     public ResponseEntity<InventarioResponseDTO> guardar(@Valid @RequestBody InventarioRequestDTO dto) {
-        log.info("POST /api/v1/inventario - Crear nuevo registro");
+        log.info("POST /api/v1/inventario - Crea nuevo registro");
         InventarioResponseDTO creado = inventarioService.crear(dto);
         return new ResponseEntity<>(creado, HttpStatus.CREATED);
     }
