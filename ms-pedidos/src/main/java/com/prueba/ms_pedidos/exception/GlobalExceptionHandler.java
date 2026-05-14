@@ -1,4 +1,4 @@
-package com.prueba.ms_inventario.exception;
+package com.prueba.ms_pedidos.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +14,7 @@ import java.util.Map;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(ResourceNotFoundException.class)
-    public ResponseEntity<Map<String, String>> handleResourceNotFoundException(ResourceNotFoundException ex) {
+    public ResponseEntity<Map<String, String>> handleResourceNotFound(ResourceNotFoundException ex) {
         Map<String, String> response = new HashMap<>();
         response.put("error", ex.getMessage());
         return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
@@ -30,6 +30,4 @@ public class GlobalExceptionHandler {
         });
         return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
     }
-
-
 }
