@@ -105,7 +105,7 @@
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.MsInventarioApplication">
+  <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Prueba2" />
       <method v="2">
@@ -127,6 +127,13 @@
     <configuration name="MsPagosApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="ms-pagos" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.prueba.ms_pagos.MsPagosApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MsPedidosApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ms-pedidos" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.prueba.ms_pedidos.MsPedidosApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -160,7 +167,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1778700025924</updated>
-      <workItem from="1778700026952" duration="14306000" />
+      <workItem from="1778700026952" duration="18414000" />
     </task>
     <servers />
   </component>
