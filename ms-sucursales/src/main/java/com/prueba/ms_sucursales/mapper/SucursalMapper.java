@@ -4,10 +4,13 @@ import com.prueba.ms_sucursales.dto.SucursalDTO;
 import com.prueba.ms_sucursales.dto.SucursalRequestDTO;
 import com.prueba.ms_sucursales.model.Region;
 import com.prueba.ms_sucursales.model.Sucursal;
+import org.springframework.stereotype.Component;
 
+@Component
 public class SucursalMapper {
 
-    public static SucursalDTO toDTO(Sucursal sucursal) {
+    public SucursalDTO toDTO(Sucursal sucursal) {
+        if (sucursal == null) return null;
         return new SucursalDTO(
                 sucursal.getId(),
                 sucursal.getNombre(),
@@ -16,11 +19,12 @@ public class SucursalMapper {
                 sucursal.getCapacidad(),
                 sucursal.isActivo(),
                 sucursal.getFechaApertura(),
-                sucursal.getRegion().getId()
+                sucursal.getRegion() != null ? sucursal.getRegion().getId() : null
         );
     }
 
-    public static Sucursal toEntity(SucursalRequestDTO dto, Region region) {
+    public Sucursal toEntity(SucursalRequestDTO dto, Region region) {
+        if (dto == null) return null;
         Sucursal sucursal = new Sucursal();
         sucursal.setNombre(dto.getNombre());
         sucursal.setDireccion(dto.getDireccion());

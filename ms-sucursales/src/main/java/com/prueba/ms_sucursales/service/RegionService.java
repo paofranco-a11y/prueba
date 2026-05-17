@@ -6,25 +6,29 @@ import com.prueba.ms_sucursales.exception.ResourceNotFoundException;
 import com.prueba.ms_sucursales.mapper.RegionMapper;
 import com.prueba.ms_sucursales.model.Region;
 import com.prueba.ms_sucursales.repository.RegionRepository;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Service
-@RequiredArgsConstructor
 public class RegionService {
 
-    private final RegionRepository regionRepository;
+    @Autowired
+    private RegionRepository regionRepository;
+
+    @Autowired
+    private RegionMapper regionMapper;
 
     public List<RegionDTO> listarRegiones() {
-        log.info("Service: Listando todas las regiones");
+        log.info("Consultando todos los registros de regiones");
         try {
             return regionRepository.findAll().stream()
-                    .map(RegionMapper::toDTO)
-                    .toList();
+                    .map(regionMapper::toDTO)
+                    .collect(Collectors.toList());
         } catch (Exception e) {
             log.error("Error al listar regiones: {}", e.getMessage());
             throw e;
@@ -32,11 +36,11 @@ public class RegionService {
     }
 
     public RegionDTO obtenerRegionPorId(Integer id) {
-        log.info("Service: Buscando region ID: {}", id);
+        log.info("Buscando region con ID: {}", id);
         try {
-            Region region = regionRepository.findById(id)
+            return regionRepository.findById(id)
+                    .map(regionMapper::toDTO)
                     .orElseThrow(() -> new ResourceNotFoundException("Region no encontrada con ID: " + id));
-            return RegionMapper.toDTO(region);
         } catch (ResourceNotFoundException e) {
             throw e;
         } catch (Exception e) {
@@ -46,10 +50,10 @@ public class RegionService {
     }
 
     public RegionDTO crearRegion(RegionRequestDTO dto) {
-        log.info("Service: Creando region: {}", dto.getNombre());
+        log.info("Creando region: {}", dto.getNombre());
         try {
-            Region region = RegionMapper.toEntity(dto);
-            return RegionMapper.toDTO(regionRepository.save(region));
+            Region region = regionMapper.toEntity(dto);
+            return regionMapper.toDTO(regionRepository.save(region));
         } catch (Exception e) {
             log.error("Error al crear region: {}", e.getMessage());
             throw e;
@@ -57,7 +61,7 @@ public class RegionService {
     }
 
     public RegionDTO actualizarRegion(Integer id, RegionRequestDTO dto) {
-        log.info("Service: Actualizando region ID: {}", id);
+        log.info("Actualizando region con ID: {}", id);
         try {
             Region region = regionRepository.findById(id)
                     .orElseThrow(() -> new ResourceNotFoundException("Region no encontrada con ID: " + id));
@@ -65,7 +69,7 @@ public class RegionService {
             region.setNombre(dto.getNombre());
             region.setCodigo(dto.getCodigo());
 
-            return RegionMapper.toDTO(regionRepository.save(region));
+            return regionMapper.toDTO(regionRepository.save(region));
         } catch (ResourceNotFoundException e) {
             throw e;
         } catch (Exception e) {
@@ -75,12 +79,11 @@ public class RegionService {
     }
 
     public void eliminarRegion(Integer id) {
-        log.info("Service: Eliminando region ID: {}", id);
+        log.info("Eliminando region con ID: {}", id);
         try {
-            if (!regionRepository.existsById(id)) {
-                throw new ResourceNotFoundException("No se encontro la region para eliminar con ID: " + id);
-            }
-            regionRepository.deleteById(id);
+            Region region = regionRepository.findById(id)
+                    .orElseThrow(() -> new ResourceNotFoundException("No se encontro la region para eliminar con ID: " + id));
+            regionRepository.delete(region);
         } catch (ResourceNotFoundException e) {
             throw e;
         } catch (Exception e) {
