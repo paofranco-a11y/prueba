@@ -40,4 +40,17 @@ public class RegionController {
                 .status(HttpStatus.CREATED)
                 .body(regionService.crearRegion(dto));
     }
+
+    @PutMapping("/regiones/{id}")
+    public ResponseEntity<RegionDTO> actualizarRegion(
+            @PathVariable Integer id,
+            @Valid @RequestBody RegionRequestDTO dto) {
+        return ResponseEntity.ok(regionService.actualizarRegion(id, dto));
+    }
+
+    @DeleteMapping("/regiones/{id}")
+    public ResponseEntity<Void> eliminarRegion(@PathVariable Integer id) {
+        regionService.eliminarRegion(id);
+        return ResponseEntity.noContent().build();
+    }
 }

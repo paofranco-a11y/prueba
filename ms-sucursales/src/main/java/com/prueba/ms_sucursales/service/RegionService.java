@@ -21,43 +21,71 @@ public class RegionService {
 
     public List<RegionDTO> listarRegiones() {
         log.info("Service: Listando todas las regiones");
-        return regionRepository.findAll().stream()
-                .map(RegionMapper::toDTO)
-                .toList();
+        try {
+            return regionRepository.findAll().stream()
+                    .map(RegionMapper::toDTO)
+                    .toList();
+        } catch (Exception e) {
+            log.error("Error al listar regiones: {}", e.getMessage());
+            throw e;
+        }
     }
 
     public RegionDTO obtenerRegionPorId(Integer id) {
         log.info("Service: Buscando region ID: {}", id);
-        Region region = regionRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Region no encontrada con ID: " + id));
-        return RegionMapper.toDTO(region);
+        try {
+            Region region = regionRepository.findById(id)
+                    .orElseThrow(() -> new ResourceNotFoundException("Region no encontrada con ID: " + id));
+            return RegionMapper.toDTO(region);
+        } catch (ResourceNotFoundException e) {
+            throw e;
+        } catch (Exception e) {
+            log.error("Error al buscar region por ID {}: {}", id, e.getMessage());
+            throw e;
+        }
     }
 
     public RegionDTO crearRegion(RegionRequestDTO dto) {
-        log.info("Service: Guardando nueva region: {}", dto.getNombre());
-        Region region = RegionMapper.toEntity(dto);
-        return RegionMapper.toDTO(regionRepository.save(region));
+        log.info("Service: Creando region: {}", dto.getNombre());
+        try {
+            Region region = RegionMapper.toEntity(dto);
+            return RegionMapper.toDTO(regionRepository.save(region));
+        } catch (Exception e) {
+            log.error("Error al crear region: {}", e.getMessage());
+            throw e;
+        }
     }
 
     public RegionDTO actualizarRegion(Integer id, RegionRequestDTO dto) {
         log.info("Service: Actualizando region ID: {}", id);
-        Region region = regionRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("No se puede actualizar, region no encontrada"));
+        try {
+            Region region = regionRepository.findById(id)
+                    .orElseThrow(() -> new ResourceNotFoundException("Region no encontrada con ID: " + id));
 
-        region.setNombre(dto.getNombre());
-        region.setCodigo(dto.getCodigo());
-        region.setDescripcion(dto.getDescripcion());
-        region.setNumeroComunas(dto.getNumeroComunas());
-        region.setActivo(dto.isActivo());
+            region.setNombre(dto.getNombre());
+            region.setCodigo(dto.getCodigo());
 
-        return RegionMapper.toDTO(regionRepository.save(region));
+            return RegionMapper.toDTO(regionRepository.save(region));
+        } catch (ResourceNotFoundException e) {
+            throw e;
+        } catch (Exception e) {
+            log.error("Error al actualizar region por ID {}: {}", id, e.getMessage());
+            throw e;
+        }
     }
 
     public void eliminarRegion(Integer id) {
         log.info("Service: Eliminando region ID: {}", id);
-        if (!regionRepository.existsById(id)) {
-            throw new ResourceNotFoundException("No se encontro la region para eliminar");
+        try {
+            if (!regionRepository.existsById(id)) {
+                throw new ResourceNotFoundException("No se encontro la region para eliminar con ID: " + id);
+            }
+            regionRepository.deleteById(id);
+        } catch (ResourceNotFoundException e) {
+            throw e;
+        } catch (Exception e) {
+            log.error("Error al eliminar region por ID {}: {}", id, e.getMessage());
+            throw e;
         }
-        regionRepository.deleteById(id);
     }
 }
