@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="800adc69-ea98-400f-bc39-6686c951a518" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/controller/MovimientoStockController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/dto/MovimientoStockRequestDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/dto/MovimientoStockResponseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/mapper/MovimientoStockMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/service/MovimientoStockService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/controller/InventarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/controller/InventarioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/service/InventarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/service/InventarioService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/controller/PedidoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/controller/PedidoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/service/PedidoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/service/PedidoService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +21,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Exception" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -200,7 +201,7 @@
       <workItem from="1778811508546" duration="16000" />
       <workItem from="1778976382276" duration="11856000" />
       <workItem from="1779038172921" duration="12000" />
-      <workItem from="1779038804369" duration="10513000" />
+      <workItem from="1779038804369" duration="15841000" />
     </task>
     <servers />
   </component>
