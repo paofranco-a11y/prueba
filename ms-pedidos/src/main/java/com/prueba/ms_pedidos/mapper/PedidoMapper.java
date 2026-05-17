@@ -42,7 +42,6 @@ public class PedidoMapper {
         entity.setTotal(dto.getTotal());
         entity.setDireccionEnvio(dto.getDireccionEnvio());
 
-        // Mapeo de la relación inversa
         List<DetallePedido> detalles = dto.getDetalles().stream().map(d -> {
             DetallePedido detalle = new DetallePedido();
             detalle.setProductoId(d.getProductoId());
