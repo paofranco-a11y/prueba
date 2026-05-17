@@ -6,37 +6,30 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import java.util.stream.Collectors;
+
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(ResourceNotFoundException.class)
-    public ResponseEntity<String> manejarNotFound(
-            ResourceNotFoundException ex) {
-
-        return ResponseEntity
-                .status(HttpStatus.NOT_FOUND)
-                .body(ex.getMessage());
+    public ResponseEntity<String> manejarNotFound(ResourceNotFoundException ex) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<String> manejarValidaciones(
-            MethodArgumentNotValidException ex) {
+    public ResponseEntity<String> handleValidationErrors(MethodArgumentNotValidException ex) {
+        String error = ex.getBindingResult()
+                .getFieldErrors()
+                .stream()
+                .map(e -> e.getField() + ": " + e.getDefaultMessage())
+                .collect(Collectors.joining(", "));
 
-        String mensaje = ex.getBindingResult()
-                .getFieldError()
-                .getDefaultMessage();
-
-        return ResponseEntity
-                .status(HttpStatus.BAD_REQUEST)
-                .body(mensaje);
+        return ResponseEntity.badRequest().body(error);
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<String> manejarGeneral(
-            Exception ex) {
-
-        return ResponseEntity
-                .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .body("Error interno del servidor");
+    public ResponseEntity<String> handleGenericError(Exception ex) {
+        return ResponseEntity.internalServerError()
+                .body("Error interno: " + ex.getMessage());
     }
 }

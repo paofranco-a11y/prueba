@@ -46,6 +46,6 @@ public class UsuarioRunner implements CommandLineRunner {
             perfilRepository.save(new Perfil(null, "Vendedor", "Los Aromos 3, Concepcion", "Perfil vendedor activo", true, LocalDate.now(), u3));
         }
 
-        System.out.println("Datos iniciales cargados correctamente");
+        System.out.println("Datos de Perfiles y Usuarios Cargados Correctamente");
     }
 }

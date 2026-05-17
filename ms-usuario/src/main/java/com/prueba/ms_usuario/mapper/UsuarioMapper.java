@@ -3,10 +3,13 @@ package com.prueba.ms_usuario.mapper;
 import com.prueba.ms_usuario.dto.UsuarioDTO;
 import com.prueba.ms_usuario.dto.UsuarioRequestDTO;
 import com.prueba.ms_usuario.model.Usuario;
+import org.springframework.stereotype.Component;
 
+@Component
 public class UsuarioMapper {
 
-    public static UsuarioDTO toDTO(Usuario usuario) {
+    public UsuarioDTO toDTO(Usuario usuario) {
+        if (usuario == null) return null;
         return new UsuarioDTO(
                 usuario.getId(),
                 usuario.getNombre(),
@@ -18,7 +21,8 @@ public class UsuarioMapper {
         );
     }
 
-    public static Usuario toEntity(UsuarioRequestDTO dto) {
+    public Usuario toEntity(UsuarioRequestDTO dto) {
+        if (dto == null) return null;
         Usuario usuario = new Usuario();
         usuario.setNombre(dto.getNombre());
         usuario.setEmail(dto.getEmail());

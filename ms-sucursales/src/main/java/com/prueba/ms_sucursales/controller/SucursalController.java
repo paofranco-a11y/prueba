@@ -4,8 +4,8 @@ import com.prueba.ms_sucursales.dto.SucursalDTO;
 import com.prueba.ms_sucursales.dto.SucursalRequestDTO;
 import com.prueba.ms_sucursales.service.SucursalService;
 import jakarta.validation.Valid;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,10 +15,10 @@ import java.util.List;
 @Slf4j
 @RestController
 @RequestMapping("/api/v1/sucursales")
-@RequiredArgsConstructor
 public class SucursalController {
 
-    private final SucursalService sucursalService;
+    @Autowired
+    private SucursalService sucursalService;
 
     @GetMapping
     public ResponseEntity<List<SucursalDTO>> listarTodas() {
@@ -51,7 +51,6 @@ public class SucursalController {
         return ResponseEntity.noContent().build();
     }
 
-    // EL MÉTODO DE LA PAUTA (Personalizado con QueryParam)
     @GetMapping("/buscar")
     public ResponseEntity<List<SucursalDTO>> buscarPorRegion(@RequestParam String nombreRegion) {
         log.info("Controller: Buscando por region: {}", nombreRegion);

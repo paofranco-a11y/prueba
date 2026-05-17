@@ -1,4 +1,7 @@
 package com.prueba.ms_proveedores.repository;
 
-public class ContratoRepository {
+import com.prueba.ms_proveedores.model.Contrato;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ContratoRepository extends JpaRepository<Contrato, Integer> {
 }

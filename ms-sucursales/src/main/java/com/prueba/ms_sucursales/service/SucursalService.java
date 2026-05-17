@@ -8,74 +8,118 @@ import com.prueba.ms_sucursales.model.Region;
 import com.prueba.ms_sucursales.model.Sucursal;
 import com.prueba.ms_sucursales.repository.RegionRepository;
 import com.prueba.ms_sucursales.repository.SucursalRepository;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Service
-@RequiredArgsConstructor
 public class SucursalService {
 
-    private final SucursalRepository sucursalRepository;
-    private final RegionRepository regionRepository;
+    @Autowired
+    private SucursalRepository sucursalRepository;
+
+    @Autowired
+    private RegionRepository regionRepository;
+
+    @Autowired
+    private SucursalMapper sucursalMapper;
 
     public List<SucursalDTO> listarSucursales() {
-        log.info("Service: Listando todas las sucursales");
-        return sucursalRepository.findAll().stream()
-                .map(SucursalMapper::toDTO)
-                .toList();
+        log.info("Consultando todos los registros de sucursales");
+        try {
+            return sucursalRepository.findAll().stream()
+                    .map(sucursalMapper::toDTO)
+                    .collect(Collectors.toList());
+        } catch (Exception e) {
+            log.error("Error al listar sucursales: {}", e.getMessage());
+            throw e;
+        }
     }
 
     public SucursalDTO obtenerSucursalPorId(Integer id) {
-        log.info("Service: Buscando sucursal ID: {}", id);
-        Sucursal sucursal = sucursalRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Sucursal no encontrada con ID: " + id));
-        return SucursalMapper.toDTO(sucursal);
+        log.info("Buscando sucursal con ID: {}", id);
+        try {
+            return sucursalRepository.findById(id)
+                    .map(sucursalMapper::toDTO)
+                    .orElseThrow(() -> new ResourceNotFoundException("Sucursal no encontrada con ID: " + id));
+        } catch (ResourceNotFoundException e) {
+            throw e;
+        } catch (Exception e) {
+            log.error("Error al buscar sucursal por ID {}: {}", id, e.getMessage());
+            throw e;
+        }
     }
 
     public SucursalDTO crearSucursal(SucursalRequestDTO dto) {
-        log.info("Service: Creando sucursal en region ID: {}", dto.getRegionId());
-        Region region = regionRepository.findById(dto.getRegionId())
-                .orElseThrow(() -> new ResourceNotFoundException("Region no encontrada"));
+        log.info("Creando sucursal: {}", dto.getNombre());
+        try {
+            Region region = regionRepository.findById(dto.getRegionId())
+                    .orElseThrow(() -> new ResourceNotFoundException("Region no encontrada con ID: " + dto.getRegionId()));
 
-        Sucursal sucursal = SucursalMapper.toEntity(dto, region);
-        return SucursalMapper.toDTO(sucursalRepository.save(sucursal));
+            Sucursal sucursal = sucursalMapper.toEntity(dto, region);
+            return sucursalMapper.toDTO(sucursalRepository.save(sucursal));
+        } catch (ResourceNotFoundException e) {
+            throw e;
+        } catch (Exception e) {
+            log.error("Error al crear sucursal: {}", e.getMessage());
+            throw e;
+        }
     }
 
     public SucursalDTO actualizarSucursal(Integer id, SucursalRequestDTO dto) {
-        log.info("Service: Actualizando sucursal ID: {}", id);
-        Sucursal sucursal = sucursalRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Sucursal no encontrada"));
+        log.info("Actualizando sucursal con ID: {}", id);
+        try {
+            Sucursal sucursal = sucursalRepository.findById(id)
+                    .orElseThrow(() -> new ResourceNotFoundException("Sucursal no encontrada con ID: " + id));
 
-        Region region = regionRepository.findById(dto.getRegionId())
-                .orElseThrow(() -> new ResourceNotFoundException("Nueva region no encontrada"));
+            Region region = regionRepository.findById(dto.getRegionId())
+                    .orElseThrow(() -> new ResourceNotFoundException("Nueva region no encontrada con ID: " + dto.getRegionId()));
 
-        sucursal.setNombre(dto.getNombre());
-        sucursal.setDireccion(dto.getDireccion());
-        sucursal.setTelefono(dto.getTelefono());
-        sucursal.setCapacidad(dto.getCapacidad());
-        sucursal.setActivo(dto.isActivo());
-        sucursal.setRegion(region);
+            sucursal.setNombre(dto.getNombre());
+            sucursal.setDireccion(dto.getDireccion());
+            sucursal.setTelefono(dto.getTelefono());
+            sucursal.setCapacidad(dto.getCapacidad());
+            sucursal.setActivo(dto.isActivo());
+            sucursal.setFechaApertura(dto.getFechaApertura());
+            sucursal.setRegion(region);
 
-        return SucursalMapper.toDTO(sucursalRepository.save(sucursal));
+            return sucursalMapper.toDTO(sucursalRepository.save(sucursal));
+        } catch (ResourceNotFoundException e) {
+            throw e;
+        } catch (Exception e) {
+            log.error("Error al actualizar sucursal por ID {}: {}", id, e.getMessage());
+            throw e;
+        }
     }
 
     public void eliminarSucursal(Integer id) {
-        log.info("Service: Eliminando sucursal ID: {}", id);
-        if (!sucursalRepository.existsById(id)) {
-            throw new ResourceNotFoundException("No se encontro la sucursal para eliminar");
+        log.info("Eliminando sucursal con ID: {}", id);
+        try {
+            Sucursal sucursal = sucursalRepository.findById(id)
+                    .orElseThrow(() -> new ResourceNotFoundException("No se encontro la sucursal para eliminar con ID: " + id));
+            sucursalRepository.delete(sucursal);
+        } catch (ResourceNotFoundException e) {
+            throw e;
+        } catch (Exception e) {
+            log.error("Error al eliminar sucursal por ID {}: {}", id, e.getMessage());
+            throw e;
         }
-        sucursalRepository.deleteById(id);
     }
 
-    // metodo perso (Native Query del Repository)
+    // --- EL MÉTODO pers ---
     public List<SucursalDTO> buscarPorNombreRegion(String nombreRegion) {
-        log.info("Service: Buscando sucursales por region: {}", nombreRegion);
-        return sucursalRepository.findSucursalesByNombreRegion(nombreRegion).stream()
-                .map(SucursalMapper::toDTO)
-                .toList();
+        log.info("Buscando sucursales para la region: {}", nombreRegion);
+        try {
+            return sucursalRepository.findSucursalesByNombreRegion(nombreRegion).stream()
+                    .map(sucursalMapper::toDTO)
+                    .collect(Collectors.toList());
+        } catch (Exception e) {
+            log.error("Error al buscar sucursales por region {}: {}", nombreRegion, e.getMessage());
+            throw e;
+        }
     }
 }
