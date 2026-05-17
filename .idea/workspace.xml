@@ -5,19 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="800adc69-ea98-400f-bc39-6686c951a518" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ms-pagos/src/main/java/com/prueba/ms_pagos/dto/PagosRequestDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-pagos/src/main/java/com/prueba/ms_pagos/dto/PagosResponseDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-pagos/src/main/java/com/prueba/ms_pagos/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-pagos/src/main/java/com/prueba/ms_pagos/exception/ResourceNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-pagos/src/main/java/com/prueba/ms_pagos/model/Pagos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-pagos/src/main/resources/db/migration/V1__init.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-pagos/src/main/java/com/prueba/ms_pagos/cliente/PedidosCliente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-pagos/src/main/java/com/prueba/ms_pagos/controller/PagosController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-pagos/src/main/java/com/prueba/ms_pagos/mapper/PagosMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-pagos/src/main/java/com/prueba/ms_pagos/repository/PagosRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-pagos/src/main/java/com/prueba/ms_pagos/service/PagosService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pagos/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pagos/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pagos/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pagos/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/controller/InventarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/controller/InventarioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/service/InventarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/service/InventarioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-pagos/src/main/java/com/prueba/ms_pagos/MsPagosApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pagos/src/main/java/com/prueba/ms_pagos/MsPagosApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Exception" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -204,7 +200,7 @@
       <workItem from="1778700026952" duration="26195000" />
       <workItem from="1778732287414" duration="2788000" />
       <workItem from="1778811508546" duration="16000" />
-      <workItem from="1778976382276" duration="5228000" />
+      <workItem from="1778976382276" duration="11509000" />
     </task>
     <servers />
   </component>

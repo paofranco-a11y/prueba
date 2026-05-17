@@ -1,7 +1,7 @@
 package com.prueba.ms_inventario.service;
 
 
-import com.prueba.ms_inventario.cliente.ProductoCliente;
+import  com.prueba.ms_inventario.cliente.ProductoCliente;
 import com.prueba.ms_inventario.dto.InventarioRequestDTO;
 import com.prueba.ms_inventario.dto.InventarioResponseDTO;
 import com.prueba.ms_inventario.exception.ResourceNotFoundException;
