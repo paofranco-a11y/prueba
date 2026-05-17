@@ -15,6 +15,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
+
 @Service
 @Slf4j
 public class PedidoService {
@@ -68,13 +70,48 @@ public class PedidoService {
             }
         }
 
-        // 3. Mapear, Guardar y Retornar (Aquí es donde se completa la acción)
+
         Pedido pedido = mapper.toEntity(dto);
         Pedido guardado = repository.save(pedido);
 
         log.info("Pedido guardado con éxito. ID: {}", guardado.getId());
         return mapper.toDTO(guardado);
     }
+
+    // PARA ACTUALZIAR PEDIDO
+
+    public PedidoResponseDTO actualizar(Integer id, PedidoRequestDTO dto) {
+        log.info("Iniciando actualizacion manual del pedido ID: {}", id);
+
+        Pedido pedidoExistente = repository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Pedido no encontrado con ID " + id));
+
+        pedidoExistente.setClienteId(dto.getClienteId());
+        pedidoExistente.setCodigoSeguimiento(dto.getCodigoSeguimiento());
+        pedidoExistente.setDireccionEnvio(dto.getDireccionEnvio());
+        pedidoExistente.setTotal(dto.getTotal());
+
+        Pedido actualizado = repository.save(pedidoExistente);
+        log.info("Pedido ID: {} actualizado con éxito", actualizado.getId());
+
+        return mapper.toDTO(actualizado);
+    }
+
+
+    // traductor para pasar de boolean a string
+    public void actualizarEstado(Integer id, String nuevoEstado) {
+    log.info("Feign Request: Recibido estado '{}' para el pedido ID: {}", nuevoEstado, id);
+    Pedido pedido = repository.findById(id)
+            .orElseThrow(() -> new ResourceNotFoundException("Pedido no encontrado con ID " + id));
+        if ("PAGADO".equalsIgnoreCase(nuevoEstado)) {
+        pedido.setPagado(true);
+    } else {
+        pedido.setPagado(false);
+    }
+        repository.save(pedido);
+        log.info("Pedido ID: {} actualizado en DB con pagado = {}", id, pedido.getPagado());
+}
+
 
     public List<PedidoResponseDTO> obtenerPagados() {
         log.info("Consultando pedidos pagados");

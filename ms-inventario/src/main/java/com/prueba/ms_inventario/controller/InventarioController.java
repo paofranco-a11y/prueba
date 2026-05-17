@@ -3,6 +3,7 @@ package com.prueba.ms_inventario.controller;
 
 import com.prueba.ms_inventario.dto.InventarioRequestDTO;
 import com.prueba.ms_inventario.dto.InventarioResponseDTO;
+import com.prueba.ms_inventario.model.Inventario;
 import com.prueba.ms_inventario.service.InventarioService;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
@@ -40,6 +41,15 @@ public class InventarioController {
         InventarioResponseDTO creado = inventarioService.crear(dto);
         return new ResponseEntity<>(creado, HttpStatus.CREATED);
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<InventarioResponseDTO> actualizar(
+            @PathVariable("id") Integer id,
+            @Valid @RequestBody InventarioRequestDTO dto) {
+        log.info("/api/v1/inventario/{} - Actualizando datos", id);
+        return ResponseEntity.ok(inventarioService.actualizar(id, dto));
+    }
+
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> eliminar(@PathVariable Integer id) {

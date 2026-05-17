@@ -60,6 +60,25 @@ public class InventarioService {
         return inventarioMapper.toDTO(guardado);
     }
 
+    public InventarioResponseDTO actualizar(Integer id, InventarioRequestDTO dto) {
+        log.info("Iniciando actualizacion del pago con ID: {}", id);
+
+        Inventario inventarioExistente = inventarioRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Inventario no encontrado con ID: " + id));
+
+        inventarioExistente.setProductoId(dto.getProductoId());
+        inventarioExistente.setUbicacionBodega(dto.getUbicacionBodega());
+        inventarioExistente.setCantidadDisponible(dto.getCantidadDisponible());
+        inventarioExistente.setStockMinimoAlerta(dto.getStockMinimoAlerta());
+        inventarioExistente.setActivo(dto.getActivo());
+        inventarioExistente.setFechaUltimaRevision(dto.getFechaUltimaRevision());
+
+        Inventario inventarioActualizado = inventarioRepository.save(inventarioExistente);
+        log.info("Inventario con ID: {} actualizado correctamente en DB", id);
+        return inventarioMapper.toDTO(inventarioActualizado);
+
+    }
+
 
     public void eliminar(Integer id) {
         log.info("Eliminando producto del inventario ID: {}", id);
