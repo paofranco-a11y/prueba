@@ -14,44 +14,44 @@ import java.util.List;
 
 @Slf4j
 @RestController
-@RequestMapping("/api/v1/sucursales")
+@RequestMapping("/api/v1")
 public class SucursalController {
 
     @Autowired
     private SucursalService sucursalService;
 
-    @GetMapping
+    @GetMapping("/sucursales")
     public ResponseEntity<List<SucursalDTO>> listarTodas() {
         log.info("Controller: Listando todas las sucursales");
         return ResponseEntity.ok(sucursalService.listarSucursales());
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/sucursales/{id}")
     public ResponseEntity<SucursalDTO> obtenerPorId(@PathVariable Integer id) {
         log.info("Controller: Obteniendo sucursal ID: {}", id);
         return ResponseEntity.ok(sucursalService.obtenerSucursalPorId(id));
     }
 
-    @PostMapping
+    @PostMapping("/sucursales")
     public ResponseEntity<SucursalDTO> crear(@Valid @RequestBody SucursalRequestDTO dto) {
         log.info("Controller: Creando sucursal");
         return new ResponseEntity<>(sucursalService.crearSucursal(dto), HttpStatus.CREATED);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/sucursales/{id}")
     public ResponseEntity<SucursalDTO> actualizar(@PathVariable Integer id, @Valid @RequestBody SucursalRequestDTO dto) {
         log.info("Controller: Actualizando sucursal ID: {}", id);
         return ResponseEntity.ok(sucursalService.actualizarSucursal(id, dto));
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/sucursales/{id}")
     public ResponseEntity<Void> eliminar(@PathVariable Integer id) {
         log.info("Controller: Eliminando sucursal ID: {}", id);
         sucursalService.eliminarSucursal(id);
         return ResponseEntity.noContent().build();
     }
 
-    @GetMapping("/buscar")
+    @GetMapping("/sucursales/buscar")
     public ResponseEntity<List<SucursalDTO>> buscarPorRegion(@RequestParam String nombreRegion) {
         log.info("Controller: Buscando por region: {}", nombreRegion);
         List<SucursalDTO> sucursales = sucursalService.buscarPorNombreRegion(nombreRegion);

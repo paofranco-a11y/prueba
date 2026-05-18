@@ -14,37 +14,37 @@ import java.util.List;
 
 @Slf4j
 @RestController
-@RequestMapping("/api/v1/regiones")
+@RequestMapping("/api/v1")
 public class RegionController {
 
     @Autowired
     private RegionService regionService;
 
-    @GetMapping
+    @GetMapping("/regiones")
     public ResponseEntity<List<RegionDTO>> listarTodas() {
         log.info("Controller: Listando todas las regiones");
         return ResponseEntity.ok(regionService.listarRegiones());
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/regiones/{id}")
     public ResponseEntity<RegionDTO> obtenerPorId(@PathVariable Integer id) {
         log.info("Controller: Obteniendo region ID: {}", id);
         return ResponseEntity.ok(regionService.obtenerRegionPorId(id));
     }
 
-    @PostMapping
+    @PostMapping("/regiones")
     public ResponseEntity<RegionDTO> crear(@Valid @RequestBody RegionRequestDTO dto) {
         log.info("Controller: Creando region");
         return new ResponseEntity<>(regionService.crearRegion(dto), HttpStatus.CREATED);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/regiones/{id}")
     public ResponseEntity<RegionDTO> actualizar(@PathVariable Integer id, @Valid @RequestBody RegionRequestDTO dto) {
         log.info("Controller: Actualizando region ID: {}", id);
         return ResponseEntity.ok(regionService.actualizarRegion(id, dto));
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/regiones/{id}")
     public ResponseEntity<Void> eliminar(@PathVariable Integer id) {
         log.info("Controller: Eliminando region ID: {}", id);
         regionService.eliminarRegion(id);

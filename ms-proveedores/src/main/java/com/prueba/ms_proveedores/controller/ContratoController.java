@@ -12,41 +12,37 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/contratos")
+@RequestMapping("/api/v1")
 public class ContratoController {
 
     @Autowired
     private ContratoService contratoService;
 
-    @GetMapping
+    @GetMapping("/contratos")
     public ResponseEntity<List<ContratoDTO>> listarTodos() {
         List<ContratoDTO> contratos = contratoService.listarTodos();
-        return ResponseEntity.ok(contratos); // Retorna HTTP 200 OK
+        return ResponseEntity.ok(contratos);
     }
 
-
-    @GetMapping("/{id}")
+    @GetMapping("/contratos/{id}")
     public ResponseEntity<ContratoDTO> buscarPorId(@PathVariable Integer id) {
         ContratoDTO contrato = contratoService.buscarPorId(id);
         return ResponseEntity.ok(contrato);
     }
 
-
-    @PostMapping
+    @PostMapping("/contratos")
     public ResponseEntity<ContratoDTO> crear(@Valid @RequestBody ContratoRequestDTO contratoRequestDTO) {
         ContratoDTO creado = contratoService.crear(contratoRequestDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(creado);
     }
 
-
-    @PutMapping("/{id}")
+    @PutMapping("/contratos/{id}")
     public ResponseEntity<ContratoDTO> actualizar(@PathVariable Integer id, @Valid @RequestBody ContratoRequestDTO contratoRequestDTO) {
         ContratoDTO actualizado = contratoService.actualizar(id, contratoRequestDTO);
         return ResponseEntity.ok(actualizado);
     }
 
-
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/contratos/{id}")
     public ResponseEntity<Void> eliminar(@PathVariable Integer id) {
         contratoService.eliminar(id);
         return ResponseEntity.noContent().build();
