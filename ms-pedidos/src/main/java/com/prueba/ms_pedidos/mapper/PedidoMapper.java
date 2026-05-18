@@ -1,8 +1,10 @@
 package com.prueba.ms_pedidos.mapper;
 
-
-import com.prueba.ms_pedidos.dto.*;
-import com.prueba.ms_pedidos.model.*;
+import com.prueba.ms_pedidos.dto.PedidoRequestDTO;
+import com.prueba.ms_pedidos.dto.PedidoResponseDTO;
+import com.prueba.ms_pedidos.model.DetallePedido;
+import com.prueba.ms_pedidos.model.Pedido;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -10,7 +12,13 @@ import java.util.stream.Collectors;
 
 @Component
 public class PedidoMapper {
+
+    @Autowired
+    private DetallePedidoMapper detalleMapper;
+
     public PedidoResponseDTO toDTO(Pedido entity) {
+        if (entity == null) return null;
+
         PedidoResponseDTO dto = new PedidoResponseDTO();
         dto.setId(entity.getId());
         dto.setClienteId(entity.getClienteId());
@@ -20,40 +28,32 @@ public class PedidoMapper {
         dto.setPagado(entity.getPagado());
         dto.setDireccionEnvio(entity.getDireccionEnvio());
 
-        dto.setDetalles(entity.getDetalles().stream().map(this::toDetalleDTO).collect(Collectors.toList()));
-        return dto;
-    }
-
-    private DetallePedidoResponseDTO toDetalleDTO(DetallePedido entity) {
-        DetallePedidoResponseDTO dto = new DetallePedidoResponseDTO();
-        dto.setId(entity.getId());
-        dto.setProductoId(entity.getProductoId());
-        dto.setCantidad(entity.getCantidad());
-        dto.setPrecioUnitario(entity.getPrecioUnitario());
-        dto.setDescuentoAplicado(entity.getDescuentoAplicado());
-        dto.setFechaAgregado(entity.getFechaAgregado());
+        if (entity.getDetalles() != null) {
+            dto.setDetalles(entity.getDetalles().stream()
+                    .map(detalleMapper::toDTO)
+                    .collect(Collectors.toList()));
+        }
         return dto;
     }
 
     public Pedido toEntity(PedidoRequestDTO dto) {
+        if (dto == null) return null;
+
         Pedido entity = new Pedido();
         entity.setClienteId(dto.getClienteId());
         entity.setCodigoSeguimiento(dto.getCodigoSeguimiento());
         entity.setTotal(dto.getTotal());
         entity.setDireccionEnvio(dto.getDireccionEnvio());
 
-        List<DetallePedido> detalles = dto.getDetalles().stream().map(d -> {
-            DetallePedido detalle = new DetallePedido();
-            detalle.setProductoId(d.getProductoId());
-            detalle.setCantidad(d.getCantidad());
-            detalle.setPrecioUnitario(d.getPrecioUnitario());
-            detalle.setDescuentoAplicado(d.getDescuentoAplicado());
-            detalle.setPedido(entity);
-            return detalle;
-        }).collect(Collectors.toList());
+        if (dto.getDetalles() != null) {
+            List<DetallePedido> detalles = dto.getDetalles().stream().map(d -> {
+                DetallePedido detalle = detalleMapper.toEntity(d);
+                detalle.setPedido(entity);
+                return detalle;
+            }).collect(Collectors.toList());
 
-        entity.setDetalles(detalles);
+            entity.setDetalles(detalles);
+        }
         return entity;
     }
-
 }

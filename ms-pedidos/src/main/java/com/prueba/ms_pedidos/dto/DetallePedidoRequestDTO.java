@@ -5,21 +5,26 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import lombok.Data;
 
+import java.time.LocalDateTime;
+
 @Data
 public class DetallePedidoRequestDTO {
 
-    @NotNull(message = "El ID del producto es obligatorio")
+    @NotNull(message = "El ID de pedido es obligatorio")
+    private Integer pedidoId;
+
+    @NotNull(message = "El ID de producto es obligatorio")
     private Integer productoId;
 
     @NotNull(message = "La cantidad es obligatoria")
-    @Min(value = 1, message = "La cantidad mínima debe ser 1")
+    @Min(value = 1, message = "La cantidad debe ser mayor a 0")
     private Integer cantidad;
 
     @NotNull(message = "El precio unitario es obligatorio")
-    @Positive(message = "El precio debe ser un valor positivo")
     private Double precioUnitario;
 
-    private Boolean descuentoAplicado = false;
+    private Boolean descuentoAplicado;
 
-    private String notasAdicionales;
+    private LocalDateTime fechaAgregado;
+
 }

@@ -30,6 +30,6 @@ public class DetallePedido {
     private LocalDateTime fechaAgregado = LocalDateTime.now();
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "pedido_id") //fk que se definio para el Flyway
+    @JoinColumn(name = "pedido_id")
     private Pedido pedido;
 }
