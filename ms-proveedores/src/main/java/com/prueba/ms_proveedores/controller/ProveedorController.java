@@ -12,51 +12,45 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/proveedores")
+@RequestMapping("/api/v1")
 public class ProveedorController {
 
     @Autowired
     private ProveedorService proveedorService;
 
-
-    @GetMapping
+    @GetMapping("/proveedores")
     public ResponseEntity<List<ProveedorDTO>> listarTodos() {
         List<ProveedorDTO> proveedores = proveedorService.listarTodos();
-        return ResponseEntity.ok(proveedores); // Retorna HTTP 200 OK
+        return ResponseEntity.ok(proveedores);
     }
 
-
-    @GetMapping("/{id}")
+    @GetMapping("/proveedores/{id}")
     public ResponseEntity<ProveedorDTO> buscarPorId(@PathVariable Integer id) {
         ProveedorDTO proveedor = proveedorService.buscarPorId(id);
-        return ResponseEntity.ok(proveedor); // Retorna HTTP 200 OK
+        return ResponseEntity.ok(proveedor);
     }
 
-
-    @PostMapping
+    @PostMapping("/proveedores")
     public ResponseEntity<ProveedorDTO> crear(@Valid @RequestBody ProveedorRequestDTO proveedorRequestDTO) {
         ProveedorDTO creado = proveedorService.crear(proveedorRequestDTO);
-        return ResponseEntity.status(HttpStatus.CREATED).body(creado); // Retorna HTTP 201 CREATED
+        return ResponseEntity.status(HttpStatus.CREATED).body(creado);
     }
 
-
-    @PutMapping("/{id}")
+    @PutMapping("/proveedores/{id}")
     public ResponseEntity<ProveedorDTO> actualizar(@PathVariable Integer id, @Valid @RequestBody ProveedorRequestDTO proveedorRequestDTO) {
         ProveedorDTO actualizado = proveedorService.actualizar(id, proveedorRequestDTO);
-        return ResponseEntity.ok(actualizado); // Retorna HTTP 200 OK
+        return ResponseEntity.ok(actualizado);
     }
 
-
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/proveedores/{id}")
     public ResponseEntity<Void> eliminar(@PathVariable Integer id) {
         proveedorService.eliminar(id);
-        return ResponseEntity.noContent().build(); // Retorna HTTP 204 NO CONTENT
+        return ResponseEntity.noContent().build();
     }
 
-
-    @GetMapping("/activos")
+    @GetMapping("/proveedores/activos")
     public ResponseEntity<List<ProveedorDTO>> buscarProveedoresActivos() {
         List<ProveedorDTO> activos = proveedorService.buscarProveedoresActivos();
-        return ResponseEntity.ok(activos); // Retorna HTTP 200 OK
+        return ResponseEntity.ok(activos);
     }
 }

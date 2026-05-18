@@ -1,4 +1,4 @@
-package com.prueba.ms_usuario.exception;
+package com.prueba.ms_productos.exception;
 
 public class ResourceNotFoundException extends RuntimeException {
     public ResourceNotFoundException(String mensaje) {
