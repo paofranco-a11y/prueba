@@ -1,0 +1,73 @@
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/ms-pagos/pom.xml\" />\r\n        <option value=\"$PROJECT_DIR$/ms-usuario/pom.xml\" />\r\n        <option value=\"$PROJECT_DIR$/ms-sucursales/pom.xml\" />\r\n        <option value=\"$PROJECT_DIR$/ms-proveedores/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_24\" default=\"true\" project-jdk-name=\"24\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision da04f13b079694ced261a60b7fbd885b745dae6d)
++++ b/.idea/misc.xml	(date 1778700312139)
+@@ -8,10 +8,11 @@
+         <option value="$PROJECT_DIR$/ms-usuario/pom.xml" />
+         <option value="$PROJECT_DIR$/ms-sucursales/pom.xml" />
+         <option value="$PROJECT_DIR$/ms-proveedores/pom.xml" />
++        <option value="$PROJECT_DIR$/ms-inventario/pom.xml" />
+       </list>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_24" default="true" project-jdk-name="24" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" project-jdk-name="ms-17" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"CompilerConfiguration\">\r\n    <annotationProcessing>\r\n      <profile name=\"Annotation profile for ms-proveedores\" enabled=\"true\">\r\n        <sourceOutputDir name=\"target/generated-sources/annotations\" />\r\n        <sourceTestOutputDir name=\"target/generated-test-sources/test-annotations\" />\r\n        <outputRelativeToContentRoot value=\"true\" />\r\n        <processorPath useClasspath=\"false\">\r\n          <entry name=\"$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar\" />\r\n        </processorPath>\r\n        <module name=\"ms-sucursales\" />\r\n        <module name=\"ms-usuario\" />\r\n        <module name=\"ms-pagos\" />\r\n        <module name=\"ms-proveedores\" />\r\n      </profile>\r\n    </annotationProcessing>\r\n  </component>\r\n  <component name=\"JavacSettings\">\r\n    <option name=\"ADDITIONAL_OPTIONS_OVERRIDE\">\r\n      <module name=\"ms-pagos\" options=\"-parameters\" />\r\n      <module name=\"ms-proveedores\" options=\"-parameters\" />\r\n      <module name=\"ms-sucursales\" options=\"-parameters\" />\r\n      <module name=\"ms-usuario\" options=\"-parameters\" />\r\n    </option>\r\n  </component>\r\n</project>
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+--- a/.idea/compiler.xml	(revision da04f13b079694ced261a60b7fbd885b745dae6d)
++++ b/.idea/compiler.xml	(date 1778700954510)
+@@ -2,7 +2,17 @@
+ <project version="4">
+   <component name="CompilerConfiguration">
+     <annotationProcessing>
+-      <profile name="Annotation profile for ms-proveedores" enabled="true">
++      <profile default="true" name="Default" enabled="true" />
++      <profile name="Annotation profile for ms-inventario" enabled="true">
++        <sourceOutputDir name="target/generated-sources/annotations" />
++        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
++        <outputRelativeToContentRoot value="true" />
++        <processorPath useClasspath="false">
++          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
++        </processorPath>
++        <module name="ms-inventario" />
++      </profile>
++      <profile name="Annotation profile for ms-usuario" enabled="true">
+         <sourceOutputDir name="target/generated-sources/annotations" />
+         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+         <outputRelativeToContentRoot value="true" />
+@@ -18,6 +28,7 @@
+   </component>
+   <component name="JavacSettings">
+     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
++      <module name="ms-inventario" options="-parameters" />
+       <module name="ms-pagos" options="-parameters" />
+       <module name="ms-proveedores" options="-parameters" />
+       <module name="ms-sucursales" options="-parameters" />
+Index: .idea/encodings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"Encoding\">\r\n    <file url=\"file://$PROJECT_DIR$/ms-pagos/src/main/java\" charset=\"UTF-8\" />\r\n    <file url=\"file://$PROJECT_DIR$/ms-proveedores/src/main/java\" charset=\"UTF-8\" />\r\n    <file url=\"file://$PROJECT_DIR$/ms-sucursales/src/main/java\" charset=\"UTF-8\" />\r\n    <file url=\"file://$PROJECT_DIR$/ms-usuario/src/main/java\" charset=\"UTF-8\" />\r\n  </component>\r\n</project>
+===================================================================
+diff --git a/.idea/encodings.xml b/.idea/encodings.xml
+--- a/.idea/encodings.xml	(revision da04f13b079694ced261a60b7fbd885b745dae6d)
++++ b/.idea/encodings.xml	(date 1778700312148)
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="Encoding">
++    <file url="file://$PROJECT_DIR$/ms-inventario/src/main/java" charset="UTF-8" />
+     <file url="file://$PROJECT_DIR$/ms-pagos/src/main/java" charset="UTF-8" />
+     <file url="file://$PROJECT_DIR$/ms-proveedores/src/main/java" charset="UTF-8" />
+     <file url="file://$PROJECT_DIR$/ms-sucursales/src/main/java" charset="UTF-8" />

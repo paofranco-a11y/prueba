@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.prueba</groupId>
-	<artifactId>ms-pagos</artifactId>
+	<artifactId>ms-pedidos</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name/>
 	<description/>

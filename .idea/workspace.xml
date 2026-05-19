@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="800adc69-ea98-400f-bc39-6686c951a518" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/cliente/ProductoCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/cliente/ProductoCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/repository/InventarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/repository/InventarioRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/service/InventarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/service/InventarioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/service/MovimientoStockService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/service/MovimientoStockService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-pagos/src/main/java/com/prueba/ms_pagos/dto/PagosRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pagos/src/main/java/com/prueba/ms_pagos/dto/PagosRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-pagos/src/main/java/com/prueba/ms_pagos/repository/PagosRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pagos/src/main/java/com/prueba/ms_pagos/repository/PagosRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-pagos/src/main/java/com/prueba/ms_pagos/service/PagosService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pagos/src/main/java/com/prueba/ms_pagos/service/PagosService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/controller/PedidoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/controller/PedidoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/dto/PedidoRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/dto/PedidoRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/service/DetallePedidoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/service/DetallePedidoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/service/PedidoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/service/PedidoService.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Exception" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;nasheii66&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/paofranco-a11y/prueba.git&quot;,
+    &quot;accountId&quot;: &quot;87d8d66b-36c4-47cf-b16c-67e263053522&quot;
+  }
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3DgO0rVNElmBTlVICbrRtPRJUu9" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.ms-pedidos [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.ms-pedidos [install].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.MsInventarioApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.MsPagosApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.MsPedidosApplication.executor&quot;: &quot;Run&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;ramaOliver&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/olive/OneDrive/Desktop/proyecto&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunAnythingContextRecentDirectoryCache">
+    <option name="paths">
+      <recentPaths value="$PROJECT_DIR$" />
+    </option>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="KtorApplicationConfigurationType" />
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+    <option name="configurationStatuses">
+      <map>
+        <entry key="SpringBootApplicationConfigurationType">
+          <value>
+            <map>
+              <entry key="MsInventarioApplication" value="STOPPED" />
+              <entry key="MsPagosApplication" value="STOPPED" />
+              <entry key="MsPedidosApplication" value="STOPPED" />
+            </map>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="RunManager" selected="Database Script.V1__init.sql">
+    <configuration name="V1__init.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/ms-pedidos/src/main/resources/db/migration/V1__init.sql" />
+      <script-mode>FILE</script-mode>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Prueba2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Prueba2" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <configuration name="MsInventarioApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ms-inventario" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.prueba.ms_inventario.MsInventarioApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MsPagosApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ms-pagos" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.prueba.ms_pagos.MsPagosApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MsPedidosApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ms-pedidos" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.prueba.ms_pedidos.MsPedidosApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MsProveedoresApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ms-proveedores" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.prueba.ms_proveedores.MsProveedoresApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MsSucursalesApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ms-sucursales" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.prueba.ms_sucursales.MsSucursalesApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MsUsuarioApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ms-usuario" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.prueba.ms_usuario.MsUsuarioApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Database Script.V1__init.sql" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="800adc69-ea98-400f-bc39-6686c951a518" name="Changes" comment="" />
+      <created>1778700025924</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1778700025924</updated>
+      <workItem from="1778700026952" duration="26195000" />
+      <workItem from="1778732287414" duration="2788000" />
+      <workItem from="1778811508546" duration="16000" />
+      <workItem from="1778976382276" duration="11856000" />
+      <workItem from="1779038172921" duration="12000" />
+      <workItem from="1779038804369" duration="19555000" />
+      <workItem from="1779064085623" duration="1505000" />
+      <workItem from="1779065656142" duration="628000" />
+      <workItem from="1779144854965" duration="543000" />
+      <workItem from="1779145409743" duration="2000" />
+      <workItem from="1779145482657" duration="8355000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.hibernate.tool.schema.spi.SchemaManagementException" package="org.hibernate.tool.schema.spi" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

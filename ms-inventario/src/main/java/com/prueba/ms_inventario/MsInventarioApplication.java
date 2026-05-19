@@ -1,15 +1,15 @@
-package com.prueba.ms_pagos;
+package com.prueba.ms_inventario;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
-@SpringBootApplication
 @EnableFeignClients
-public class MsPagosApplication {
+@SpringBootApplication
+public class MsInventarioApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MsPagosApplication.class, args);
+		SpringApplication.run(MsInventarioApplication.class, args);
 	}
 
 }
