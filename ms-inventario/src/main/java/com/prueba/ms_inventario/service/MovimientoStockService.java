@@ -42,7 +42,7 @@ public class MovimientoStockService {
         return repository.findById(id)
                 .map(mapper::toDTO)
                 .orElseThrow(() -> {
-                    log.error("Error: Movimiento no encontrado con ID: {}", id);
+                    log.error("Movimiento no encontrado con ID: {}", id);
                     return new ResourceNotFoundException("Movimiento no encontrado con ID " + id);
                 });
     }
@@ -83,7 +83,7 @@ public class MovimientoStockService {
         existente.setFechaMovimiento(dto.getFechaMovimiento());
 
         MovimientoStock actualizado = repository.save(existente);
-        log.info("Movimiento ID: {} actualizado correctamente en DB", actualizado.getId());
+        log.info("Movimiento stock ID {} actualizado correctamente en DB", actualizado.getId());
         return mapper.toDTO(actualizado);
     }
 

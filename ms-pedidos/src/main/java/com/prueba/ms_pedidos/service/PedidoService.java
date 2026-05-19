@@ -50,7 +50,7 @@ public class PedidoService {
     public PedidoResponseDTO crear(PedidoRequestDTO dto) {
         log.info("Iniciando creación de pedido para cliente ID: {}", dto.getClienteId());
 
-        // 1. Validar Usuario (ms-usuarios)
+        // 1. Validar con ms-usuarios
         try {
             usuarioCliente.validarUsuario(dto.getClienteId());
             log.info("Usuario validado correctamente");
@@ -59,7 +59,7 @@ public class PedidoService {
             throw new RuntimeException("No se puede crear el pedido Cliente no encontrado.");
         }
 
-        // 2. Validar cada Producto (ms-productos)
+        // 2. Validar con ms-productos
         for (DetallePedidoRequestDTO detalle : dto.getDetalles()) {
             try {
                 productoCliente.obtenerProducto(detalle.getProductoId());
@@ -70,13 +70,13 @@ public class PedidoService {
             }
         }
 
-
         Pedido pedido = mapper.toEntity(dto);
         Pedido guardado = repository.save(pedido);
 
         log.info("Pedido guardado con éxito. ID: {}", guardado.getId());
         return mapper.toDTO(guardado);
     }
+
 
     // PARA ACTUALZIAR PEDIDO
 
@@ -92,7 +92,7 @@ public class PedidoService {
         pedidoExistente.setTotal(dto.getTotal());
 
         Pedido actualizado = repository.save(pedidoExistente);
-        log.info("Pedido ID: {} actualizado con éxito", actualizado.getId());
+        log.info("Pedido ID: {} actualizado con exito", actualizado.getId());
 
         return mapper.toDTO(actualizado);
     }
@@ -100,7 +100,7 @@ public class PedidoService {
 
     // traductor para pasar de boolean a string
     public void actualizarEstado(Integer id, String nuevoEstado) {
-    log.info("Feign Request: Recibido estado '{}' para el pedido ID: {}", nuevoEstado, id);
+    log.info("Recibido estado '{}' para el pedido ID: {}", nuevoEstado, id);
     Pedido pedido = repository.findById(id)
             .orElseThrow(() -> new ResourceNotFoundException("Pedido no encontrado con ID " + id));
         if ("PAGADO".equalsIgnoreCase(nuevoEstado)) {
@@ -109,7 +109,7 @@ public class PedidoService {
         pedido.setPagado(false);
     }
         repository.save(pedido);
-        log.info("Pedido ID: {} actualizado en DB con pagado = {}", id, pedido.getPagado());
+        log.info("Pedido ID {} actualizado en DB con pagado = {}", id, pedido.getPagado());
 }
 
 
@@ -123,7 +123,7 @@ public class PedidoService {
     public void eliminar(Integer id) {
         log.info("Eliminando pedido ID: {}", id);
         Pedido pedido = repository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("No se puede eliminar Pedido inexistente"));
+                .orElseThrow(() -> new ResourceNotFoundException("No se puede eliminar el pedido inexistente"));
         repository.delete(pedido);
     }
 }

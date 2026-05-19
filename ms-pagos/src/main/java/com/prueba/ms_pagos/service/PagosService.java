@@ -49,7 +49,7 @@ public class PagosService {
 
     // Crear pago
     public PagosResponseDTO crear(PagosRequestDTO dto) {
-        log.info("Iniciando creación de pago para el pedido ID: {}", dto.getPedidoId());
+        log.info("Iniciando creacion de pago para el pedido ID: {}", dto.getPedidoId());
 
         Pagos pago = pagoMapper.toEntity(dto);
         Pagos pagoGuardado = pagoRepository.save(pago);
@@ -79,7 +79,7 @@ public class PagosService {
         pagoExistente.setMonto(dto.getMonto());
 
         Pagos pagoActualizado = pagoRepository.save(pagoExistente);
-        log.info("Pago con ID: {} actualizado correctamente en DB", id);
+        log.info("Pago con ID {} actualizado correctamente en DB", id);
         return pagoMapper.toDTO(pagoActualizado);
     }
 
@@ -92,7 +92,7 @@ public class PagosService {
         }
 
         pagoRepository.deleteById(id);
-        log.info("El pago con ID {} fue eliminado con éxito", id);
+        log.info("El pago con ID {} fue eliminado con exito", id);
     }
 
 

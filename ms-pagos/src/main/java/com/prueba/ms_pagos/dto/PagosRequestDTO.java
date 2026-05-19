@@ -14,7 +14,7 @@ public class PagosRequestDTO {
     @Min(value = 1, message = "El ID del pedido debe ser mayor a 0")
     private Integer pedidoId;
 
-    @NotBlank(message = "El método de pago no puede estar vacio")
+    @NotBlank(message = "El metodo de pago no puede estar vacio")
     private String metodoPago;
 
     @NotBlank(message = "El estado del pago no puede estar vacio")

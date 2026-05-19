@@ -44,7 +44,7 @@ public class PedidoController {
     public ResponseEntity<PedidoResponseDTO> actualizar(
             @PathVariable Integer id,
             @RequestBody PedidoRequestDTO dto) {
-        log.info("Endpoint: PUT /api/v1/pedidos/{} - Actualización completa de datos", id);
+        log.info("Endpoint: PUT /api/v1/pedidos/{} - Actualizacion completa de datos", id);
         return ResponseEntity.ok(service.actualizar(id, dto));
     }
 
@@ -54,7 +54,7 @@ public class PedidoController {
     public ResponseEntity<Void> actualizarEstado(
             @PathVariable Integer id,
             @RequestParam String estado) {
-        log.info("Endpoint Feign: PUT /api/v1/pedidos/{}/estado - Cambiando estado a: {}", id, estado);
+        log.info("/api/v1/pedidos/{}/estado - Cambiando estado a {}", id, estado);
         service.actualizarEstado(id, estado);
         return ResponseEntity.ok().build();
     }

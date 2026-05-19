@@ -5,15 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="800adc69-ea98-400f-bc39-6686c951a518" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/controller/DetallePedidoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/mapper/DetallePedidoMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/repository/DetallePedidoRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/service/DetallePedidoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/dto/DetallePedidoRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/dto/DetallePedidoRequestDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/dto/DetallePedidoResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/dto/DetallePedidoResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/mapper/PedidoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/mapper/PedidoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/model/DetallePedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/model/DetallePedido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/cliente/ProductoCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/cliente/ProductoCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/repository/InventarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/repository/InventarioRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/service/InventarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/service/InventarioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/service/MovimientoStockService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/service/MovimientoStockService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-pagos/src/main/java/com/prueba/ms_pagos/dto/PagosRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pagos/src/main/java/com/prueba/ms_pagos/dto/PagosRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-pagos/src/main/java/com/prueba/ms_pagos/repository/PagosRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pagos/src/main/java/com/prueba/ms_pagos/repository/PagosRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-pagos/src/main/java/com/prueba/ms_pagos/service/PagosService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pagos/src/main/java/com/prueba/ms_pagos/service/PagosService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/controller/PedidoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/controller/PedidoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/dto/PedidoRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/dto/PedidoRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/service/DetallePedidoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/service/DetallePedidoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/service/PedidoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/service/PedidoService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +130,7 @@
       </map>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Database Script.V1__init.sql">
     <configuration name="V1__init.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
       <script-file value="$PROJECT_DIR$/ms-pedidos/src/main/resources/db/migration/V1__init.sql" />
       <script-mode>FILE</script-mode>
@@ -206,6 +209,10 @@
       <workItem from="1779038172921" duration="12000" />
       <workItem from="1779038804369" duration="19555000" />
       <workItem from="1779064085623" duration="1505000" />
+      <workItem from="1779065656142" duration="628000" />
+      <workItem from="1779144854965" duration="543000" />
+      <workItem from="1779145409743" duration="2000" />
+      <workItem from="1779145482657" duration="8355000" />
     </task>
     <servers />
   </component>

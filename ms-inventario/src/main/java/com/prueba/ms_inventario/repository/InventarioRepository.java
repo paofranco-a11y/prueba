@@ -13,9 +13,8 @@ import java.util.Optional;
 @Repository
 public interface InventarioRepository extends JpaRepository<Inventario, Integer> {
 
-    Optional<Inventario> findByProductoId(Integer productoId); // Query 1: buscar por id de producto
+    Optional<Inventario> findByProductoId(Integer productoId); // query 1 busca por id del producto
 
 
-    @Query("SELECT i FROM Inventario i WHERE i.ubicacionBodega LIKE %:ubicacion%") // Query 2: busca el producto por ubicacion utilizando JPQL
-    List<Inventario> buscarPorUbicacion(@Param("ubicacion") String ubicacion);
+    List<Inventario> findByCantidadDisponibleGreaterThanAndActivoTrue(Integer cantidadMinima);
 }

@@ -42,14 +42,14 @@ public class DetallePedidoService {
         return repository.findById(id)
                 .map(mapper::toDTO)
                 .orElseThrow(() -> {
-                    log.error("Detalle de pedido no encontrado con ID: {}", id);
+                    log.error("Detalle de pedido no encontrado con ID {}", id);
                     return new ResourceNotFoundException("Detalle de pedido no encontrado con ID " + id);
                 });
     }
 
 
     public DetallePedidoResponseDTO crear(DetallePedidoRequestDTO dto) {
-        log.info("Iniciando adición independiente de ítem para el pedido ID: {}", dto.getPedidoId());
+        log.info("Iniciando adicion independiente de item para el pedido ID: {}", dto.getPedidoId());
 
         Pedido pedido = pedidoRepository.findById(dto.getPedidoId())
                 .orElseThrow(() -> new ResourceNotFoundException("Pedido no encontrado con ID " + dto.getPedidoId()));
@@ -57,13 +57,13 @@ public class DetallePedidoService {
         DetallePedido nuevo = mapper.toEntity(dto);
         nuevo.setPedido(pedido);
         DetallePedido guardado = repository.save(nuevo);
-        log.info("Detalle de pedido guardado con éxito. ID asignado: {}", guardado.getId());
+        log.info("Detalle de pedido guardado con exito. ID asignado: {}", guardado.getId());
         return mapper.toDTO(guardado);
     }
 
 
     public DetallePedidoResponseDTO actualizar(Integer id, DetallePedidoRequestDTO dto) {
-        log.info("Iniciando actualización manual del detalle ID: {}", id);
+        log.info("Iniciando actualizacion manual del detalle ID: {}", id);
         DetallePedido existente = repository.findById(id)
                 .orElseThrow(() -> {
                     log.error("Detalle no encontrado para actualizar con ID: {}", id);
@@ -86,7 +86,7 @@ public class DetallePedidoService {
     public void eliminar(Integer id) {
         log.info("Eliminando detalle de pedido ID: {}", id);
         DetallePedido detalle = repository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("No se puede eliminar el Detalle inexistente con ID: " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("No se puede eliminar el Detalle inexistente con ID " + id));
         repository.delete(detalle);
         log.info("Detalle eliminado correctamente de la base de datos");
     }
