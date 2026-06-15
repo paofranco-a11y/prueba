@@ -1,0 +1,79 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1-crear-tabla-reportes
+      author: ecommerce
+      changes:
+        - createTable:
+            tableName: reportes
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: titulo
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: tipo_reporte
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: total_ingresos
+                  type: float
+                  constraints:
+                    nullable: false
+              - column:
+                  name: total_registros
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: es_consolidado
+                  type: boolean
+                  constraints:
+                    nullable: false
+              - column:
+                  name: fecha_generacion
+                  type: date
+                  constraints:
+                    nullable: false
+
+  - changeSet:
+      id: 2-insertar-datos-iniciales-reportes
+      author: ecommerce
+      changes:
+        - insert:
+            tableName: reportes
+            columns:
+              - column: { name: id, value: 1 }
+              - column: { name: titulo, value: "Reporte Mensual de Ventas" }
+              - column: { name: tipo_reporte, value: "VENTAS" }
+              - column: { name: total_ingresos, value: 150000.0 }
+              - column: { name: total_registros, value: 45 }
+              - column: { name: es_consolidado, value: 1 }
+              - column: { name: fecha_generacion, value: "2026-06-01" }
+        - insert:
+            tableName: reportes
+            columns:
+              - column: { name: id, value: 2 }
+              - column: { name: titulo, value: "Auditoria de Pagos Pendientes" }
+              - column: { name: tipo_reporte, value: "FINANZAS" }
+              - column: { name: total_ingresos, value: 0.0 }
+              - column: { name: total_registros, value: 12 }
+              - column: { name: es_consolidado, value: 0 }
+              - column: { name: fecha_generacion, value: "2026-06-05" }
+        - insert:
+            tableName: reportes
+            columns:
+              - column: { name: id, value: 3 }
+              - column: { name: titulo, value: "Desempeño de Despachos y Envios" }
+              - column: { name: tipo_reporte, value: "LOGISTICA" }
+              - column: { name: total_ingresos, value: 35000.0 }
+              - column: { name: total_registros, value: 28 }
+              - column: { name: es_consolidado, value: 1 }
+              - column: { name: fecha_generacion, value: "2026-06-14" }
