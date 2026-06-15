@@ -1,0 +1,123 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1-crear-tablas-envios
+      author: ecommerce
+      changes:
+        - createTable:
+            tableName: envios
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: pedido_id
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: direccion_destino
+                  type: varchar(150)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: costo_envio
+                  type: float
+                  constraints:
+                    nullable: false
+              - column:
+                  name: es_internacional
+                  type: boolean
+                  constraints:
+                    nullable: false
+              - column:
+                  name: fecha_despacho
+                  type: date
+                  constraints:
+                    nullable: false
+        - createTable:
+            tableName: seguimientos
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: envio_id
+                  type: int
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_seguimiento_envio
+                    referencedTableName: envios
+                    referencedColumnNames: id
+              - column:
+                  name: estado_actual
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: ubicacion_actual
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: porcentaje_progreso
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: requiere_firma
+                  type: boolean
+                  constraints:
+                    nullable: false
+              - column:
+                  name: fecha_actualizacion
+                  type: date
+                  constraints:
+                    nullable: false
+
+  - changeSet:
+      id: 2-insertar-datos-iniciales
+      author: ecommerce
+      changes:
+        - insert:
+            tableName: envios
+            columns:
+              - column: { name: id, value: 1 }
+              - column: { name: pedido_id, value: 101 }
+              - column: { name: direccion_destino, value: "Av. Providencia 1234, Santiago" }
+              - column: { name: costo_envio, value: 3500.0 }
+              - column: { name: es_internacional, value: false }
+              - column: { name: fecha_despacho, value: "2026-06-10" }
+        - insert:
+            tableName: envios
+            columns:
+              - column: { name: id, value: 2 }
+              - column: { name: pedido_id, value: 102 }
+              - column: { name: direccion_destino, value: "Calle Larga 567, Valparaiso" }
+              - column: { name: costo_envio, value: 4500.0 }
+              - column: { name: es_internacional, value: false }
+              - column: { name: fecha_despacho, value: "2026-06-12" }
+        - insert:
+            tableName: envios
+            columns:
+              - column: { name: id, value: 3 }
+              - column: { name: pedido_id, value: 103 }
+              - column: { name: direccion_destino, value: "Miami Suite 404, USA" }
+              - column: { name: costo_envio, value: 25000.0 }
+              - column: { name: es_internacional, value: true }
+              - column: { name: fecha_despacho, value: "2026-06-14" }
+        - insert:
+            tableName: seguimientos
+            columns:
+              - column: { name: id, value: 1 }
+              - column: { name: envio_id, value: 1 }
+              - column: { name: estado_actual, value: "EN_CAMINO" }
+              - column: { name: ubicacion_actual, value: "Centro de Distribucion Santiago" }
+              - column: { name: porcentaje_progreso, value: 50 }
+              - column: { name: requiere_firma, value: true }
+              - column: { name: fecha_actualizacion, value: "2026-06-14" }
