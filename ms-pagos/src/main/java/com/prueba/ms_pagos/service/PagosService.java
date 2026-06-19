@@ -4,6 +4,7 @@ package com.prueba.ms_pagos.service;
 import com.prueba.ms_pagos.cliente.PedidosCliente;
 import com.prueba.ms_pagos.dto.PagosRequestDTO;
 import com.prueba.ms_pagos.dto.PagosResponseDTO;
+import com.prueba.ms_pagos.dto.PedidoResponseDTO;
 import com.prueba.ms_pagos.exception.ResourceNotFoundException;
 import com.prueba.ms_pagos.mapper.PagosMapper;
 import com.prueba.ms_pagos.model.Pagos;
@@ -25,7 +26,6 @@ public class PagosService {
 
     private final PagosRepository pagoRepository;
     private final PagosMapper pagoMapper;
-    private final PedidosCliente pedidoCliente;
     private final PedidosCliente pedidosCliente;
 
 
@@ -40,38 +40,71 @@ public class PagosService {
 
     //Obtener pago por id
     public PagosResponseDTO obtenerPorId(Integer id) {
-        log.info("Buscando pago con ID: {}", id);
-        return pagoRepository.findById(id)
-                .map(pagoMapper::toDTO)
-                .orElseThrow(() -> new ResourceNotFoundException("Pedido no encontrado con ID " + id));
+        log.info("Buscando pago con ID {}", id);
+        Pagos pago = pagoRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Pago no encontrado con ID " + id));
+        PagosResponseDTO responseDTO = pagoMapper.toDTO(pago);
+        try {
+            PedidoResponseDTO pedidoDatos = pedidosCliente.obtenerPedido(pago.getPedidoId());
+            responseDTO.setPedido(pedidoDatos);
+            log.info("Informacion del pedido cargada exitosamente al pago.");
+        } catch (Exception e) {
+            log.warn("No se pudo cargar la informacion completa del pedido ID {}", pago.getPedidoId());
+        }
+
+        return responseDTO;
     }
 
 
     // Crear pago
     public PagosResponseDTO crear(PagosRequestDTO dto) {
         log.info("Iniciando creacion de pago para el pedido ID: {}", dto.getPedidoId());
+        try {
+            pedidosCliente.obtenerPedido(dto.getPedidoId());
+            log.info("Pedido validado correctamente");
+        } catch (Exception e) {
+            log.error("Error: intento de pago para un pedido no registrado.");
+            throw new ResourceNotFoundException("No se puede registrar el pago, el pedido con ID " + dto.getPedidoId() + " no existe.");
+        }
+
+        // Validador
+        PedidoResponseDTO pedidoObtenido;
+        try {
+            pedidoObtenido = pedidosCliente.obtenerPedido(dto.getPedidoId());
+        } catch (Exception e) {
+            throw new ResourceNotFoundException("El pedido no existe");
+        }
+        dto.setMonto(pedidoObtenido.getTotal());
 
         Pagos pago = pagoMapper.toEntity(dto);
         Pagos pagoGuardado = pagoRepository.save(pago);
-        log.info("Pago registrado con éxito{}", pagoGuardado.getId());
+        log.info("Pago registrado con exito ID: {}", pagoGuardado.getId());
 
         if ("Aprobado".equalsIgnoreCase(pagoGuardado.getEstado())) {
-                log.info("Conectando con ms-pedidos para actualizar estado a pagado...");
+            try {
+                log.info("Actualizando estado del pago");
                 pedidosCliente.actualizarEstadoPedido(pagoGuardado.getPedidoId(), "Pagado");
                 log.info("ms-pedidos notificado correctamente.");
+            } catch (Exception e) {
+                log.error("Error, el pago se guardo pero no se pudo validar {}", e.getMessage());
+            }
         }
         return pagoMapper.toDTO(pagoGuardado);
-
-
     }
 
     // Actualizar Pago
 
     public PagosResponseDTO actualizar(Integer id, PagosRequestDTO dto) {
-        log.info("Iniciando actualización del pago con ID: {}", id);
-
+        log.info("Iniciando actualizacion del pago con ID: {}", id);
         Pagos pagoExistente = pagoRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Pago no encontrado con ID: " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Pago no encontrado con ID: " + id));
+        try {
+            pedidosCliente.obtenerPedido(dto.getPedidoId());
+            log.info("Nuevo pedido validado correctamente");
+        } catch (Exception e) {
+            log.error("Error: intento de actualizacion hacia un pedido inexistente.");
+            throw new ResourceNotFoundException("No se puede actualizar el pago, el pedido con ID " + dto.getPedidoId() + " no existe");
+        }
 
         pagoExistente.setPedidoId(dto.getPedidoId());
         pagoExistente.setMetodoPago(dto.getMetodoPago());
@@ -80,6 +113,16 @@ public class PagosService {
 
         Pagos pagoActualizado = pagoRepository.save(pagoExistente);
         log.info("Pago con ID {} actualizado correctamente en DB", id);
+
+        if ("Aprobado".equalsIgnoreCase(pagoActualizado.getEstado())) {
+            try {
+                log.info("Conectando con ms-pedidos tras cambio de estado");
+                pedidosCliente.actualizarEstadoPedido(pagoActualizado.getPedidoId(), "Pagado");
+                log.info("ms-pedidos notificado con exito tras actualizacion");
+            } catch (Exception e) {
+                log.error("No se pudo notificar el cambio de estado del pago por fallo {}", e.getMessage());
+            }
+        }
         return pagoMapper.toDTO(pagoActualizado);
     }
 

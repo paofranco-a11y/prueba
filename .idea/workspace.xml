@@ -5,18 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="800adc69-ea98-400f-bc39-6686c951a518" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/data_sources_history.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/data_sources_history.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13-05-2026_16_11_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13-05-2026_16_11__Changes_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/cliente/ProductoCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/cliente/ProductoCliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/repository/InventarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/repository/InventarioRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/service/InventarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/service/InventarioService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/service/MovimientoStockService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/service/MovimientoStockService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pagos/src/main/java/com/prueba/ms_pagos/dto/PagosRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pagos/src/main/java/com/prueba/ms_pagos/dto/PagosRequestDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pagos/src/main/java/com/prueba/ms_pagos/repository/PagosRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pagos/src/main/java/com/prueba/ms_pagos/repository/PagosRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pagos/src/main/java/com/prueba/ms_pagos/service/PagosService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pagos/src/main/java/com/prueba/ms_pagos/service/PagosService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/controller/PedidoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/controller/PedidoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/dto/PedidoRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/dto/PedidoRequestDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/service/DetallePedidoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/service/DetallePedidoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/service/PedidoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/service/PedidoService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +30,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="ramaOliver" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -86,7 +81,7 @@
     &quot;Spring Boot.MsPagosApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.MsPedidosApplication.executor&quot;: &quot;Run&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;ramaOliver&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/olive/OneDrive/Desktop/proyecto&quot;,
@@ -136,16 +131,19 @@
       <script-mode>FILE</script-mode>
       <method v="2" />
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="Prueba2" />
+    <configuration name="MsEmpleadosApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ms-empleados" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ecommerce.ms_empleados.MsEmpleadosApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="Prueba2" />
-      <option name="filePath" />
-      <method v="2" />
+    <configuration name="MsEnviosApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ms-envios" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ecommerce.ms_envios.MsEnviosApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="MsInventarioApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="ms-inventario" />
@@ -168,9 +166,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MsProductosApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ms-productos" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.prueba.ms_productos.MsProductosApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MsProveedoresApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="ms-proveedores" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.prueba.ms_proveedores.MsProveedoresApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MsReportesApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ms-reportes" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ecommerce.ms_reportes.MsReportesApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -191,6 +203,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Database Script.V1__init.sql" />
         <item itemvalue="Database Script.V1__init.sql" />
       </list>
     </recent_temporary>
@@ -213,6 +226,7 @@
       <workItem from="1779144854965" duration="543000" />
       <workItem from="1779145409743" duration="2000" />
       <workItem from="1779145482657" duration="8355000" />
+      <workItem from="1781838410721" duration="89000" />
     </task>
     <servers />
   </component>
