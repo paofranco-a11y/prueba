@@ -12,6 +12,21 @@
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13-05-2026_16_11_[Changes]1/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13-05-2026_16_11__Changes_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/controller/PerfilController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/controller/PerfilController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/controller/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/controller/UsuarioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/dto/PerfilDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/dto/PerfilDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/dto/PerfilRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/dto/PerfilRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/dto/UsuarioDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/dto/UsuarioDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/dto/UsuarioRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/dto/UsuarioRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/exception/ResourceNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/exception/ResourceNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/mapper/PerfilMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/mapper/PerfilMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/mapper/UsuarioMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/mapper/UsuarioMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/model/Perfil.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/model/Perfil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/model/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/repository/PerfilRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/repository/PerfilRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/runner/UsuarioRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/runner/UsuarioRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/service/PerfilService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/service/PerfilService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,12 +56,12 @@
     &quot;assignee&quot;: &quot;nasheii66&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/paofranco-a11y/prueba.git&quot;,
-    &quot;accountId&quot;: &quot;87d8d66b-36c4-47cf-b16c-67e263053522&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/paofranco-a11y/prueba.git",
+    "accountId": "b55db8c7-db7d-42b4-a3fb-f44f92f25fd2"
   }
-}</component>
+}]]></component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -59,10 +74,49 @@
   &quot;fromUser&quot;: false
 }</component>
   <component name="ProjectId" id="3DgO0rVNElmBTlVICbrRtPRJUu9" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven.ms-pedidos [clean].executor": "Run",
+    "Maven.ms-pedidos [install].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.MsEnviosApplication.executor": "Run",
+    "Spring Boot.MsInventarioApplication.executor": "Run",
+    "Spring Boot.MsPagosApplication.executor": "Run",
+    "Spring Boot.MsPedidosApplication.executor": "Run",
+    "Spring Boot.MsProductosApplication.executor": "Run",
+    "Spring Boot.MsReportesApplication.executor": "Run",
+    "Spring Boot.MsUsuarioApplication.executor": "Run",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "RamaPaola",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/olive/OneDrive/Desktop/proyecto",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.configurations.included.in.services": "true",
+    "vue.rearranger.settings.migration": "true"
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Maven.ms-pedidos [clean].executor&quot;: &quot;Run&quot;,
@@ -96,7 +150,7 @@
     &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}</component>
+}]]></component>
   <component name="RunAnythingContextRecentDirectoryCache">
     <option name="paths">
       <recentPaths value="$PROJECT_DIR$" />
@@ -116,21 +170,35 @@
         <entry key="SpringBootApplicationConfigurationType">
           <value>
             <map>
+              <entry key="MsEnviosApplication" value="STOPPED" />
               <entry key="MsInventarioApplication" value="STOPPED" />
               <entry key="MsPagosApplication" value="STOPPED" />
               <entry key="MsPedidosApplication" value="STOPPED" />
+              <entry key="MsProductosApplication" value="STOPPED" />
+              <entry key="MsReportesApplication" value="STOPPED" />
+              <entry key="MsUsuarioApplication" value="STOPPED" />
             </map>
           </value>
         </entry>
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="Database Script.V1__init.sql">
+  <component name="RunManager" selected="Spring Boot.MsUsuarioApplication">
     <configuration name="V1__init.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
       <script-file value="$PROJECT_DIR$/ms-pedidos/src/main/resources/db/migration/V1__init.sql" />
       <script-mode>FILE</script-mode>
       <method v="2" />
     </configuration>
+    <configuration name="MsEnviosApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
+      <module name="ms-envios" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ecommerce.ms_envios.MsEnviosApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ecommerce.ms_envios.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
     <configuration name="MsEmpleadosApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="ms-empleados" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.ecommerce.ms_empleados.MsEmpleadosApplication" />
@@ -166,6 +234,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MsProductosApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
+      <module name="ms-productos" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.prueba.ms_productos.MsProductosApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.prueba.ms_productos.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
     <configuration name="MsProductosApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="ms-productos" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.prueba.ms_productos.MsProductosApplication" />
@@ -180,6 +258,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MsReportesApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
+      <module name="ms-reportes" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ecommerce.ms_reportes.MsReportesApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ecommerce.ms_reportes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
     <configuration name="MsReportesApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="ms-reportes" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.ecommerce.ms_reportes.MsReportesApplication" />
@@ -203,10 +291,20 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.MsProductosApplication" />
+        <item itemvalue="Spring Boot.MsReportesApplication" />
+        <item itemvalue="Spring Boot.MsEnviosApplication" />
         <item itemvalue="Database Script.V1__init.sql" />
         <item itemvalue="Database Script.V1__init.sql" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.31033.145" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

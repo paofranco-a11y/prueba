@@ -1,9 +1,13 @@
 package com.prueba.ms_pedidos.service;
+
 import com.prueba.ms_pedidos.cliente.ProductoCliente;
 import com.prueba.ms_pedidos.cliente.UsuarioCliente;
 import com.prueba.ms_pedidos.dto.DetallePedidoRequestDTO;
+import com.prueba.ms_pedidos.dto.DetallePedidoResponseDTO;
 import com.prueba.ms_pedidos.dto.PedidoRequestDTO;
 import com.prueba.ms_pedidos.dto.PedidoResponseDTO;
+import com.prueba.ms_pedidos.dto.ProductoDTO;
+import com.prueba.ms_pedidos.dto.UsuarioDTO;
 import com.prueba.ms_pedidos.exception.ResourceNotFoundException;
 import com.prueba.ms_pedidos.mapper.PedidoMapper;
 import com.prueba.ms_pedidos.model.Pedido;
@@ -14,8 +18,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
-import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 @Service
 @Slf4j
@@ -33,10 +35,42 @@ public class PedidoService {
     @Autowired
     private ProductoCliente productoCliente;
 
+
+    private PedidoResponseDTO enriquecerPedido(PedidoResponseDTO responseDTO) {
+        if (responseDTO == null) return null;
+
+        // 1. Traer datos del Usuario remoto
+        try {
+            if (responseDTO.getClienteId() != null) {
+                UsuarioDTO usuario = usuarioCliente.obtenerUsuario(responseDTO.getClienteId());
+                responseDTO.setUsuario(usuario);
+            }
+        } catch (Exception e) {
+            log.error("No se pudo obtener el usuario para el pedido ID {}: {}", responseDTO.getId(), e.getMessage());
+        }
+
+        // 2. Recorrer los detalles y traer los datos de cada Producto remoto
+        if (responseDTO.getDetalles() != null) {
+            for (DetallePedidoResponseDTO detalle : responseDTO.getDetalles()) {
+                try {
+                    if (detalle.getProductoId() != null) {
+                        ProductoDTO producto = productoCliente.obtenerProducto(detalle.getProductoId());
+                        detalle.setProducto(producto);
+                    }
+                } catch (Exception e) {
+                    log.error("No se pudo obtener el producto ID {} para el detalle: {}", detalle.getProductoId(), e.getMessage());
+                }
+            }
+        }
+
+        return responseDTO;
+    }
+
     public List<PedidoResponseDTO> obtenerTodos() {
         log.info("Iniciando consulta de todos los pedidos");
         return repository.findAll().stream()
                 .map(mapper::toDTO)
+                .map(this::enriquecerPedido) // 🔥 ¡Enriquecemos cada pedido de la lista!
                 .collect(Collectors.toList());
     }
 
@@ -44,6 +78,7 @@ public class PedidoService {
         log.info("Buscando pedido con ID: {}", id);
         return repository.findById(id)
                 .map(mapper::toDTO)
+                .map(this::enriquecerPedido) // 🔥 ¡Enriquecemos el pedido encontrado!
                 .orElseThrow(() -> new ResourceNotFoundException("Pedido no encontrado con ID " + id));
     }
 
@@ -52,11 +87,11 @@ public class PedidoService {
 
         // 1. Validar con ms-usuarios
         try {
-            usuarioCliente.validarUsuario(dto.getClienteId());
+            usuarioCliente.obtenerUsuario(dto.getClienteId());
             log.info("Usuario validado correctamente");
         } catch (Exception e) {
             log.error("Error al validar usuario: {}", e.getMessage());
-            throw new RuntimeException("No se puede crear el pedido Cliente no encontrado.");
+            throw new RuntimeException("No se puede crear el pedido. Cliente no encontrado.");
         }
 
         // 2. Validar con ms-productos
@@ -74,11 +109,10 @@ public class PedidoService {
         Pedido guardado = repository.save(pedido);
 
         log.info("Pedido guardado con éxito. ID: {}", guardado.getId());
-        return mapper.toDTO(guardado);
+
+        // Devolvemos el DTO también enriquecido para ver el resultado de inmediato en el POST
+        return enriquecerPedido(mapper.toDTO(guardado));
     }
-
-
-    // PARA ACTUALZIAR PEDIDO
 
     public PedidoResponseDTO actualizar(Integer id, PedidoRequestDTO dto) {
         log.info("Iniciando actualizacion manual del pedido ID: {}", id);
@@ -94,29 +128,27 @@ public class PedidoService {
         Pedido actualizado = repository.save(pedidoExistente);
         log.info("Pedido ID: {} actualizado con exito", actualizado.getId());
 
-        return mapper.toDTO(actualizado);
+        return enriquecerPedido(mapper.toDTO(actualizado));
     }
 
-
-    // traductor para pasar de boolean a string
     public void actualizarEstado(Integer id, String nuevoEstado) {
-    log.info("Recibido estado '{}' para el pedido ID: {}", nuevoEstado, id);
-    Pedido pedido = repository.findById(id)
-            .orElseThrow(() -> new ResourceNotFoundException("Pedido no encontrado con ID " + id));
+        log.info("Recibido estado '{}' para el pedido ID: {}", nuevoEstado, id);
+        Pedido pedido = repository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Pedido no encontrado con ID " + id));
         if ("PAGADO".equalsIgnoreCase(nuevoEstado)) {
-        pedido.setPagado(true);
-    } else {
-        pedido.setPagado(false);
-    }
+            pedido.setPagado(true);
+        } else {
+            pedido.setPagado(false);
+        }
         repository.save(pedido);
         log.info("Pedido ID {} actualizado en DB con pagado = {}", id, pedido.getPagado());
-}
-
+    }
 
     public List<PedidoResponseDTO> obtenerPagados() {
         log.info("Consultando pedidos pagados");
         return repository.findPedidosPagados().stream()
                 .map(mapper::toDTO)
+                .map(this::enriquecerPedido)
                 .collect(Collectors.toList());
     }
 
@@ -127,4 +159,3 @@ public class PedidoService {
         repository.delete(pedido);
     }
 }
-

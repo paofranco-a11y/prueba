@@ -6,9 +6,11 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Data //crea automáticamente los métodos Getters y Setters para todas las variables
+@NoArgsConstructor  //crea el constructor vacío
+@AllArgsConstructor //crea un constructor con todos los parámetros
+
+
 public class PerfilDTO {
 
     private Integer id;
