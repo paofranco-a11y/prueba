@@ -26,17 +26,6 @@
         <module name="ms-reportes" />
         <module name="ms-pedidos" />
         <module name="ms-empleados" />
-        <module name="ms-pagos" />
-      </profile>
-      <profile name="Annotation profile for ms-productos" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
-        </processorPath>
-        <module name="ms-productos" />
       </profile>
       <profile name="Annotation profile for ms-usuario" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -47,7 +36,19 @@
         </processorPath>
         <module name="ms-usuario" />
       </profile>
+      <profile name="Annotation profile for ms-pagos" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
+        </processorPath>
+        <module name="ms-pagos" />
+        <module name="ms-productos" />
+      </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="17" />
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
