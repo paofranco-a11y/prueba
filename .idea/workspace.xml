@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="800adc69-ea98-400f-bc39-6686c951a518" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ms-usuario/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-usuario/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -130,14 +128,14 @@
               <entry key="MsPedidosApplication" value="STOPPED" />
               <entry key="MsProductosApplication" value="STOPPED" />
               <entry key="MsReportesApplication" value="STOPPED" />
-              <entry key="MsUsuarioApplication" value="STOPPED" />
+              <entry key="MsUsuarioApplication" value="FAILED" />
             </map>
           </value>
         </entry>
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.MsPedidosApplication">
+  <component name="RunManager" selected="Spring Boot.MsUsuarioApplication">
     <configuration name="V1__init.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
       <script-file value="$PROJECT_DIR$/ms-pedidos/src/main/resources/db/migration/V1__init.sql" />
       <script-mode>FILE</script-mode>
@@ -285,6 +283,11 @@
           <properties class="org.hibernate.tool.schema.spi.SchemaManagementException" package="org.hibernate.tool.schema.spi" />
           <option name="timeStamp" value="2" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/controller/PerfilController.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
