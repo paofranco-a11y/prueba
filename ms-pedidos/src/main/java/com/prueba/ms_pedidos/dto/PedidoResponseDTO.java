@@ -14,6 +14,9 @@ public class PedidoResponseDTO {
     private Boolean pagado;
     private String direccionEnvio;
 
+    // Contiene los datos del cliente consultados de forma remota a su microservicio
     private UsuarioDTO usuario;
+
+    // Lista con el desglose detallado de todos los productos y cantidades que componen este pedido
     private List<DetallePedidoResponseDTO> detalles;
 }

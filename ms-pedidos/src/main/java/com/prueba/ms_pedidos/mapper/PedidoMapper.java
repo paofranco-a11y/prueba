@@ -16,6 +16,7 @@ public class PedidoMapper {
     @Autowired
     private DetallePedidoMapper detalleMapper;
 
+    // Se encarga de armar la estructura del pedido con los datos recibidos del formulario para poder guardarla
     public PedidoResponseDTO toDTO(Pedido entity) {
         if (entity == null) return null;
 
@@ -35,7 +36,7 @@ public class PedidoMapper {
         }
         return dto;
     }
-
+    // Se encarga de armar la estructura del pedido con los datos recibidos del formulario para poder guardarla
     public Pedido toEntity(PedidoRequestDTO dto) {
         if (dto == null) return null;
 
