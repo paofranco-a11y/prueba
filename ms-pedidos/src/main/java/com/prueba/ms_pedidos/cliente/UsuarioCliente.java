@@ -1,6 +1,7 @@
 package com.prueba.ms_pedidos.cliente;
 
-import com.prueba.ms_pedidos.dto.UsuarioDTO; // <-- Importamos EL DTO
+import com.prueba.ms_pedidos.dto.UsuarioDTO; // <-- Importamos tu DTO
+import com.prueba.ms_pedidos.dto.UsuarioResponseDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,4 +12,6 @@ public interface UsuarioCliente {
 
     @GetMapping("/{id}")
     UsuarioDTO obtenerUsuario(@PathVariable("id") Integer id); // <-- Tipado con UsuarioDTO
+}
+    UsuarioResponseDTO validarUsuario(@PathVariable("id") Integer id);
 }

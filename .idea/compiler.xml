@@ -3,7 +3,18 @@
   <component name="CompilerConfiguration">
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
-      <profile name="Annotation profile for ms-usuario" enabled="true">
+      <profile name="Annotation profile for ms-pedidos" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar" />
+        </processorPath>
+        <module name="ms-pagos" />
+        <module name="ms-pedidos" />
+        <module name="ms-inventario" />
+      </profile>
+      <profile name="Annotation profile for ms-reportes" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -15,6 +26,12 @@
         <module name="ms-usuario" />
         <module name="ms-envios" />
         <module name="ms-proveedores" />
+        <module name="ms-envios" />
+        <module name="ms-proveedores" />
+        <module name="ms-reportes" />
+        <module name="ms-productos" />
+        <module name="ms-empleados" />
+        <module name="ms-usuario" />
       </profile>
       <profile name="Annotation profile for ms-pagos" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -41,6 +58,8 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ms-envios" options="-parameters" />
+      <module name="ms-empleados" options="-parameters" />
       <module name="ms-envios" options="-parameters" />
       <module name="ms-inventario" options="-parameters" />
       <module name="ms-pagos" options="-parameters" />

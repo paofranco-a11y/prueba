@@ -5,6 +5,7 @@ import java.time.LocalDate;
 
 @Data
 public class InventarioResponseDTO {
+    private ProductoResponseDTO producto;
     private Integer id;
     private Integer productoId;
     private String ubicacionBodega;
