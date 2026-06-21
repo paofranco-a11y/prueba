@@ -9,24 +9,14 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar" />
         </processorPath>
         <module name="ms-inventario" />
       </profile>
-      <profile name="Annotation profile for ms-pedidos" enabled="true">
+      <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
-        </processorPath>
-        <module name="ms-sucursales" />
-        <module name="ms-envios" />
-        <module name="ms-proveedores" />
-        <module name="ms-reportes" />
-        <module name="ms-pedidos" />
-        <module name="ms-empleados" />
-        <module name="ms-pagos" />
+        <module name="eureka-server" />
       </profile>
       <profile name="Annotation profile for ms-productos" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -34,9 +24,10 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
         </processorPath>
+        <module name="ms-pagos" />
         <module name="ms-productos" />
+        <module name="ms-pedidos" />
       </profile>
       <profile name="Annotation profile for ms-usuario" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -45,14 +36,24 @@
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
         </processorPath>
+        <module name="ms-reportes" />
+        <module name="ms-sucursales" />
         <module name="ms-usuario" />
+        <module name="ms-empleados" />
+        <module name="ms-envios" />
+        <module name="ms-proveedores" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ms-gateway" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="eureka-server" options="-parameters" />
       <module name="ms-empleados" options="-parameters" />
       <module name="ms-envios" options="-parameters" />
+      <module name="ms-gateway" options="-parameters" />
       <module name="ms-inventario" options="-parameters" />
       <module name="ms-pagos" options="-parameters" />
       <module name="ms-pedidos" options="-parameters" />

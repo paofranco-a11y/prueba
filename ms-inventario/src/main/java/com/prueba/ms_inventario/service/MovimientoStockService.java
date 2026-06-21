@@ -28,14 +28,12 @@ public class MovimientoStockService {
     @Autowired
     private MovimientoStockMapper mapper;
 
-
     public List<MovimientoStockResponseDTO> obtenerTodos() {
         log.info("Consultando todos los movimientos de stock");
         return repository.findAll().stream()
                 .map(mapper::toDTO)
                 .collect(Collectors.toList());
     }
-
 
     public MovimientoStockResponseDTO obtenerPorId(Integer id) {
         log.info("Buscando movimiento de stock con ID: {}", id);
@@ -47,12 +45,30 @@ public class MovimientoStockService {
                 });
     }
 
-
     public MovimientoStockResponseDTO crear(MovimientoStockRequestDTO dto) {
         log.info("Iniciando registro de movimiento para inventario ID: {}", dto.getInventarioId());
 
         Inventario inventario = inventarioRepository.findById(dto.getInventarioId())
                 .orElseThrow(() -> new ResourceNotFoundException("Inventario no encontrado con ID " + dto.getInventarioId()));
+
+        // --- INICIO DE LÓGICA DE NEGOCIO (CORRECCIÓN) ---
+        if ("ENTRADA".equalsIgnoreCase(dto.getTipoMovimiento())) {
+            inventario.setCantidadDisponible(inventario.getCantidadDisponible() + dto.getCantidadMoviendo());
+            log.info("Aumentando stock. Nueva cantidad: {}", inventario.getCantidadDisponible());
+        } else if ("SALIDA".equalsIgnoreCase(dto.getTipoMovimiento())) {
+            // Validar que no queden números negativos
+            if (inventario.getCantidadDisponible() < dto.getCantidadMoviendo()) {
+                throw new IllegalArgumentException("Stock insuficiente. Tienes " + inventario.getCantidadDisponible() + " en stock y quieres sacar " + dto.getCantidadMoviendo());
+            }
+            inventario.setCantidadDisponible(inventario.getCantidadDisponible() - dto.getCantidadMoviendo());
+            log.info("Disminuyendo stock. Nueva cantidad: {}", inventario.getCantidadDisponible());
+        } else {
+            throw new IllegalArgumentException("El tipo de movimiento debe ser 'ENTRADA' o 'SALIDA'. Valor actual: " + dto.getTipoMovimiento());
+        }
+
+        // Se guarda el inventario con su nueva cantidad en la base de datos
+        inventarioRepository.save(inventario);
+        // --- FIN DE LÓGICA DE NEGOCIO ---
 
         MovimientoStock nuevo = mapper.toEntity(dto);
         nuevo.setInventario(inventario);
@@ -61,7 +77,6 @@ public class MovimientoStockService {
         log.info("Movimiento guardado con éxito. ID: {}", guardado.getId());
         return mapper.toDTO(guardado);
     }
-
 
     public MovimientoStockResponseDTO actualizar(Integer id, MovimientoStockRequestDTO dto) {
         log.info("Iniciando actualización manual del movimiento ID: {}", id);
@@ -86,7 +101,6 @@ public class MovimientoStockService {
         log.info("Movimiento stock ID {} actualizado correctamente en DB", actualizado.getId());
         return mapper.toDTO(actualizado);
     }
-
 
     public void eliminar(Integer id) {
         log.info("Eliminando movimiento de stock ID: {}", id);

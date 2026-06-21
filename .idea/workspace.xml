@@ -4,7 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="800adc69-ea98-400f-bc39-6686c951a518" name="Changes" comment="ms-pagos y ms-productos documentado con OpenApi y HATEOAS, implementacion de eureka en ms-pagos y ms-inventario." />
+    <list default="true" id="800adc69-ea98-400f-bc39-6686c951a518" name="Changes" comment="ms-pagos y ms-productos documentado con OpenApi y HATEOAS, implementacion de eureka en ms-pagos y ms-inventario.">
+      <change afterPath="$PROJECT_DIR$/Externos/ms-gateway/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Externos/ms-gateway/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Externos/ms-gateway/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Externos/ms-gateway/img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Externos/ms-gateway/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Externos/ms-gateway/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Externos/ms-gateway/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Externos/ms-gateway/src/main/java/com/duoc/eureka_server/EurekaServerApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Externos/ms-gateway/src/main/resources/application.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Externos/ms-gateway/src/test/java/com/duoc/eureka_server/EurekaServerApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/assemblers/InventarioModelAssembler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/assemblers/MovimientoStockModelAssembler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/config/SwaggerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/controller/InventarioControllerV2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/controller/MovimientoStockControllerV2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-inventario/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-inventario/src/test/java/com/prueba/ms_inventario/service/InventarioServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-inventario/src/test/java/com/prueba/ms_inventario/service/MovimientoStockServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/data_sources_history.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/data_sources_history.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-inventario/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-inventario/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/controller/InventarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/controller/InventarioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/controller/MovimientoStockController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/controller/MovimientoStockController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/service/InventarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/service/InventarioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/service/MovimientoStockService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-inventario/src/main/java/com/prueba/ms_inventario/service/MovimientoStockService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-inventario/src/main/resources/application.properties" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,7 +68,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/paofranco-a11y/prueba.git&quot;,
-    &quot;accountId&quot;: &quot;4bfbb348-5392-4867-a3a5-717e820b942a&quot;
+    &quot;accountId&quot;: &quot;87d8d66b-36c4-47cf-b16c-67e263053522&quot;
   }
 }</component>
   <component name="MavenImportPreferences">
@@ -58,41 +90,55 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Maven.ms-pedidos [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.ms-pedidos [install].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.MsInventarioApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.MsPagosApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.MsPedidosApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.MsProductosApplication.executor&quot;: &quot;Run&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/olive/OneDrive/Desktop/proyecto&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.EurekaServerApplicationTests.executor": "Run",
+    "JUnit.InventarioServiceTest.executor": "Run",
+    "JUnit.MovimientoStockServiceTest.executor": "Run",
+    "Maven.ms-pedidos [clean].executor": "Run",
+    "Maven.ms-pedidos [install].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.EurekaServerApplication.executor": "Run",
+    "Spring Boot.MsInventarioApplication.executor": "Run",
+    "Spring Boot.MsPagosApplication.executor": "Run",
+    "Spring Boot.MsPedidosApplication.executor": "Run",
+    "Spring Boot.MsProductosApplication.executor": "Run",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/olive/OneDrive/Desktop/PROYECTO/PROYECTO/prueba/Externos",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/olive/OneDrive/Desktop/PROYECTO/PROYECTO/prueba/ms-gateway/src/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.configurations.included.in.services": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\olive\OneDrive\Desktop\PROYECTO\PROYECTO\prueba\Externos" />
+      <recent name="C:\Users\olive\OneDrive\Desktop\PROYECTO\PROYECTO\prueba" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\olive\OneDrive\Desktop\PROYECTO\PROYECTO\prueba" />
+    </key>
+  </component>
   <component name="RunAnythingContextRecentDirectoryCache">
     <option name="paths">
       <recentPaths value="$PROJECT_DIR$" />
@@ -107,12 +153,62 @@
         <option value="SpringBootApplicationConfigurationType" />
       </set>
     </option>
+    <option name="configurationStatuses">
+      <map>
+        <entry key="SpringBootApplicationConfigurationType">
+          <value>
+            <map>
+              <entry key="EurekaServerApplication" value="STOPPED" />
+              <entry key="MsInventarioApplication" value="STOPPED" />
+              <entry key="MsProductosApplication" value="STOPPED" />
+            </map>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.MsProductosApplication">
+  <component name="RunManager">
     <configuration name="V1__init.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
       <script-file value="$PROJECT_DIR$/ms-pedidos/src/main/resources/db/migration/V1__init.sql" />
       <script-mode>FILE</script-mode>
       <method v="2" />
+    </configuration>
+    <configuration name="InventarioServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ms-inventario" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.prueba.ms_inventario.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.prueba.ms_inventario.service" />
+      <option name="MAIN_CLASS_NAME" value="com.prueba.ms_inventario.service.InventarioServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MovimientoStockServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ms-inventario" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.prueba.ms_inventario.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.prueba.ms_inventario.service" />
+      <option name="MAIN_CLASS_NAME" value="com.prueba.ms_inventario.service.MovimientoStockServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="eureka-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.duoc.eureka_server.EurekaServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="MsEmpleadosApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="ms-empleados" />
@@ -186,6 +282,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MovimientoStockServiceTest" />
+        <item itemvalue="JUnit.InventarioServiceTest" />
         <item itemvalue="Database Script.V1__init.sql" />
         <item itemvalue="Database Script.V1__init.sql" />
       </list>
@@ -210,6 +308,11 @@
       <workItem from="1779145409743" duration="2000" />
       <workItem from="1779145482657" duration="8355000" />
       <workItem from="1781838410721" duration="89000" />
+      <workItem from="1782057681758" duration="14713000" />
+      <workItem from="1782075854783" duration="2258000" />
+      <workItem from="1782078162356" duration="674000" />
+      <workItem from="1782078848455" duration="27000" />
+      <workItem from="1782078910874" duration="174000" />
     </task>
     <task id="LOCAL-00001" summary="ms-pagos y ms-productos documentado con OpenApi y HATEOAS, implementacion de eureka en ms-pagos y ms-inventario.">
       <option name="closed" value="true" />
@@ -256,6 +359,11 @@
           <properties class="org.hibernate.tool.schema.spi.SchemaManagementException" package="org.hibernate.tool.schema.spi" />
           <option name="timeStamp" value="2" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ms-gateway/src/Main.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
