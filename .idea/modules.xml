@@ -3,7 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Prueba2.iml" filepath="$PROJECT_DIR$/.idea/Prueba2.iml" />
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/ms-gateway/ms-gateway.iml" filepath="$PROJECT_DIR$/ms-gateway/ms-gateway.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/ms-productos/ms-productos.iml" filepath="$PROJECT_DIR$/ms-productos/ms-productos.iml" />
+>>>>>>> 482682c99063b65448861f0a3236ab6fcda5b08a
     </modules>
   </component>
 </project>

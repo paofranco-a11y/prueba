@@ -1,5 +1,6 @@
 package com.prueba.ms_pedidos.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -41,5 +42,6 @@ public class DetallePedido {
     @ManyToOne(fetch = FetchType.LAZY)
     // Especifica el nombre de la columna que funcionara como llave foranea (FK)
     @JoinColumn(name = "pedido_id")
+    @JsonIgnore
     private Pedido pedido;
 }
