@@ -29,7 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="ramaOliver" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -135,6 +135,16 @@
       <script-mode>FILE</script-mode>
       <method v="2" />
     </configuration>
+    <configuration name="MsEnviosApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
+      <module name="ms-envios" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ecommerce.ms_envios.MsEnviosApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ecommerce.ms_envios.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
     <configuration name="MsEmpleadosApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="ms-empleados" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.ecommerce.ms_empleados.MsEmpleadosApplication" />
@@ -208,7 +218,6 @@
     <recent_temporary>
       <list>
         <item itemvalue="Database Script.V1__init.sql" />
-        <item itemvalue="Database Script.V1__init.sql" />
       </list>
     </recent_temporary>
   </component>
@@ -230,7 +239,6 @@
       <workItem from="1779144854965" duration="543000" />
       <workItem from="1779145409743" duration="2000" />
       <workItem from="1779145482657" duration="8355000" />
-      <workItem from="1781838410721" duration="89000" />
     </task>
     <task id="LOCAL-00001" summary="ms-pagos y ms-productos documentado con OpenApi y HATEOAS, implementacion de eureka en ms-pagos y ms-inventario.">
       <option name="closed" value="true" />
