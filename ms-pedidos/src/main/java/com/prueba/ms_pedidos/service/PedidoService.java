@@ -35,11 +35,8 @@ public class PedidoService {
     @Autowired
     private ProductoCliente productoCliente;
 
-
     private PedidoResponseDTO enriquecerPedido(PedidoResponseDTO responseDTO) {
         if (responseDTO == null) return null;
-
-        // 1. Traer datos del Usuario remoto
         try {
             if (responseDTO.getClienteId() != null) {
                 UsuarioDTO usuario = usuarioCliente.obtenerUsuario(responseDTO.getClienteId());
@@ -48,8 +45,6 @@ public class PedidoService {
         } catch (Exception e) {
             log.error("No se pudo obtener el usuario para el pedido ID {}: {}", responseDTO.getId(), e.getMessage());
         }
-
-        // 2. Recorrer los detalles y traer los datos de cada Producto remoto
         if (responseDTO.getDetalles() != null) {
             for (DetallePedidoResponseDTO detalle : responseDTO.getDetalles()) {
                 try {
@@ -62,7 +57,6 @@ public class PedidoService {
                 }
             }
         }
-
         return responseDTO;
     }
 
@@ -70,7 +64,7 @@ public class PedidoService {
         log.info("Iniciando consulta de todos los pedidos");
         return repository.findAll().stream()
                 .map(mapper::toDTO)
-                .map(this::enriquecerPedido) // 🔥 ¡Enriquecemos cada pedido de la lista!
+                .map(this::enriquecerPedido)
                 .collect(Collectors.toList());
     }
 
@@ -78,14 +72,12 @@ public class PedidoService {
         log.info("Buscando pedido con ID: {}", id);
         return repository.findById(id)
                 .map(mapper::toDTO)
-                .map(this::enriquecerPedido) // 🔥 ¡Enriquecemos el pedido encontrado!
+                .map(this::enriquecerPedido)
                 .orElseThrow(() -> new ResourceNotFoundException("Pedido no encontrado con ID " + id));
     }
 
     public PedidoResponseDTO crear(PedidoRequestDTO dto) {
         log.info("Iniciando creación de pedido para cliente ID: {}", dto.getClienteId());
-
-        // 1. Validar con ms-usuarios
         try {
             usuarioCliente.obtenerUsuario(dto.getClienteId());
             log.info("Usuario validado correctamente");
@@ -93,8 +85,6 @@ public class PedidoService {
             log.error("Error al validar usuario: {}", e.getMessage());
             throw new RuntimeException("No se puede crear el pedido. Cliente no encontrado.");
         }
-
-        // 2. Validar con ms-productos
         for (DetallePedidoRequestDTO detalle : dto.getDetalles()) {
             try {
                 productoCliente.obtenerProducto(detalle.getProductoId());
@@ -104,30 +94,22 @@ public class PedidoService {
                 throw new RuntimeException("Producto con ID " + detalle.getProductoId() + " no disponible.");
             }
         }
-
         Pedido pedido = mapper.toEntity(dto);
         Pedido guardado = repository.save(pedido);
-
         log.info("Pedido guardado con éxito. ID: {}", guardado.getId());
-
-        // Devolvemos el DTO también enriquecido para ver el resultado de inmediato en el POST
         return enriquecerPedido(mapper.toDTO(guardado));
     }
 
     public PedidoResponseDTO actualizar(Integer id, PedidoRequestDTO dto) {
         log.info("Iniciando actualizacion manual del pedido ID: {}", id);
-
         Pedido pedidoExistente = repository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Pedido no encontrado con ID " + id));
-
         pedidoExistente.setClienteId(dto.getClienteId());
         pedidoExistente.setCodigoSeguimiento(dto.getCodigoSeguimiento());
         pedidoExistente.setDireccionEnvio(dto.getDireccionEnvio());
         pedidoExistente.setTotal(dto.getTotal());
-
         Pedido actualizado = repository.save(pedidoExistente);
         log.info("Pedido ID: {} actualizado con exito", actualizado.getId());
-
         return enriquecerPedido(mapper.toDTO(actualizado));
     }
 
@@ -157,5 +139,38 @@ public class PedidoService {
         Pedido pedido = repository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("No se puede eliminar el pedido inexistente"));
         repository.delete(pedido);
+    }
+
+
+    // ---- MÉTODOS HATEOAS (V2) ----
+
+    public List<Pedido> listarTodosModel() {
+        log.info("HATEOAS - Listando todos los pedidos");
+        return repository.findAll();
+    }
+
+    public Pedido obtenerModelPorId(Integer id) {
+        log.info("HATEOAS - Buscando pedido con ID: {}", id);
+        return repository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Pedido no encontrado con ID " + id));
+    }
+
+    public Pedido crearModel(Pedido pedido) {
+        log.info("HATEOAS - Creando pedido");
+        return repository.save(pedido);
+    }
+
+    public Pedido actualizarModel(Integer id, Pedido pedido) {
+        log.info("HATEOAS - Actualizando pedido con ID: {}", id);
+        Pedido existente = repository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Pedido no encontrado con ID " + id));
+
+        existente.setClienteId(pedido.getClienteId());
+        existente.setCodigoSeguimiento(pedido.getCodigoSeguimiento());
+        existente.setDireccionEnvio(pedido.getDireccionEnvio());
+        existente.setTotal(pedido.getTotal());
+        existente.setPagado(pedido.getPagado());
+
+        return repository.save(existente);
     }
 }

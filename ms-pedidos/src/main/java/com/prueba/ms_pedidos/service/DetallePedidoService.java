@@ -28,14 +28,12 @@ public class DetallePedidoService {
     @Autowired
     private DetallePedidoMapper mapper;
 
-    // Busca todos los detalles guardados y pasarlos a una lista DTO
     public List<DetallePedidoResponseDTO> obtenerTodos() {
         log.info("Consultando todos los detalles de pedidos registrados");
         return repository.findAll().stream()
                 .map(mapper::toDTO)
                 .collect(Collectors.toList());
     }
-
 
     public DetallePedidoResponseDTO obtenerPorId(Integer id) {
         log.info("Buscando detalle de pedido con ID: {}", id);
@@ -47,20 +45,16 @@ public class DetallePedidoService {
                 });
     }
 
-
     public DetallePedidoResponseDTO crear(DetallePedidoRequestDTO dto) {
         log.info("Iniciando adicion independiente de item para el pedido ID: {}", dto.getPedidoId());
-
         Pedido pedido = pedidoRepository.findById(dto.getPedidoId())
                 .orElseThrow(() -> new ResourceNotFoundException("Pedido no encontrado con ID " + dto.getPedidoId()));
-
         DetallePedido nuevo = mapper.toEntity(dto);
         nuevo.setPedido(pedido);
         DetallePedido guardado = repository.save(nuevo);
         log.info("Detalle de pedido guardado con exito. ID asignado: {}", guardado.getId());
         return mapper.toDTO(guardado);
     }
-
 
     public DetallePedidoResponseDTO actualizar(Integer id, DetallePedidoRequestDTO dto) {
         log.info("Iniciando actualizacion manual del detalle ID: {}", id);
@@ -82,12 +76,45 @@ public class DetallePedidoService {
         return mapper.toDTO(actualizado);
     }
 
-
     public void eliminar(Integer id) {
         log.info("Eliminando detalle de pedido ID: {}", id);
         DetallePedido detalle = repository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("No se puede eliminar el Detalle inexistente con ID " + id));
         repository.delete(detalle);
         log.info("Detalle eliminado correctamente de la base de datos");
+    }
+
+
+    // ---- MÉTODOS HATEOAS (V2) ----
+
+    public List<DetallePedido> listarTodosModel() {
+        log.info("HATEOAS - Listando todos los detalles de pedidos");
+        return repository.findAll();
+    }
+
+    public DetallePedido obtenerModelPorId(Integer id) {
+        log.info("HATEOAS - Buscando detalle con ID: {}", id);
+        return repository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Detalle de pedido no encontrado con ID " + id));
+    }
+
+    public DetallePedido crearModel(DetallePedido detalle) {
+        log.info("HATEOAS - Creando detalle de pedido");
+        return repository.save(detalle);
+    }
+
+    public DetallePedido actualizarModel(Integer id, DetallePedido detalle) {
+        log.info("HATEOAS - Actualizando detalle con ID: {}", id);
+        DetallePedido existente = repository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Detalle de pedido no encontrado con ID " + id));
+
+        existente.setProductoId(detalle.getProductoId());
+        existente.setCantidad(detalle.getCantidad());
+        existente.setPrecioUnitario(detalle.getPrecioUnitario());
+        existente.setDescuentoAplicado(detalle.getDescuentoAplicado());
+        existente.setFechaAgregado(detalle.getFechaAgregado());
+        existente.setPedido(detalle.getPedido());
+
+        return repository.save(existente);
     }
 }
