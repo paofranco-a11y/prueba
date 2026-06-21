@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.time.LocalDate;
 
+// Recibe la estructura de los datos del producto mapeados desde el microservicio ms-productos a traves de FeignCLIENT
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

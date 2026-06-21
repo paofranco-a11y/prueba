@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.time.LocalDate;
 
+// Recibe la estructura de los datos del cliente mapeados desde el microservicio ms-usuarios a traves de FeignClient
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

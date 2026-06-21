@@ -21,8 +21,10 @@
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
         </processorPath>
+        <module name="ms-reportes" />
         <module name="ms-sucursales" />
         <module name="ms-usuario" />
+        <module name="ms-envios" />
         <module name="ms-proveedores" />
         <module name="ms-envios" />
         <module name="ms-proveedores" />
@@ -40,26 +42,17 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
         </processorPath>
         <module name="ms-pagos" />
-      </profile>
-      <profile name="Annotation profile for ms-envios" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
-        </processorPath>
-        <module name="ms-reportes" />
-        <module name="ms-envios" />
-      </profile>
-      <profile name="Annotation profile for ms-productos" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
-        </processorPath>
-        <module name="ms-productos" />
         <module name="ms-pedidos" />
+        <module name="ms-productos" />
+      </profile>
+      <profile name="Annotation profile for ms-inventario" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar" />
+        </processorPath>
+        <module name="ms-inventario" />
       </profile>
     </annotationProcessing>
   </component>

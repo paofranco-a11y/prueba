@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public interface PedidoRepository extends JpaRepository<Pedido, Integer> {
 
-
+    // Indica que esta interfaz maneja las consultas y operaciones de la tabla de pedidos
     @Query("SELECT p FROM Pedido p WHERE p.pagado = true ORDER BY p.fechaPedido DESC")
     List<Pedido> findPedidosPagados();
 }

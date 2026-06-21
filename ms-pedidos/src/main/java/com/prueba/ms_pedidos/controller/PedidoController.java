@@ -40,6 +40,7 @@ public class PedidoController {
         return ResponseEntity.ok(service.obtenerPagados());
     }
 
+
     @PutMapping("/{id}")
     public ResponseEntity<PedidoResponseDTO> actualizar(
             @PathVariable Integer id,
@@ -60,7 +61,7 @@ public class PedidoController {
     }
 
 
-
+    // Define el endpoint DELETE  eliminar fisicamente un detalle mediante su ID
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> eliminar(@PathVariable Integer id) {
         service.eliminar(id);
