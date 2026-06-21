@@ -94,4 +94,37 @@ public class CategoriaService {
             throw e;
         }
     }
+
+
+    // ---- MÉTODOS HATEOAS (V2) ----
+
+    public List<Categoria> listarCategoriasModel() {
+        log.info("HATEOAS - Listando todas las categorias");
+        return categoriaRepository.findAll();
+    }
+
+    public Categoria obtenerCategoriaModelPorId(Integer id) {
+        log.info("HATEOAS - Buscando categoria con ID: {}", id);
+        return categoriaRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Categoria no encontrada con ID: " + id));
+    }
+
+    public Categoria crearCategoriaModel(Categoria categoria) {
+        log.info("HATEOAS - Creando categoria");
+        return categoriaRepository.save(categoria);
+    }
+
+    public Categoria actualizarCategoriaModel(Integer id, Categoria categoria) {
+        log.info("HATEOAS - Actualizando categoria con ID: {}", id);
+        Categoria existente = categoriaRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Categoria no encontrada con ID: " + id));
+
+        existente.setNombre(categoria.getNombre());
+        existente.setCodigo(categoria.getCodigo());
+        existente.setDescripcion(categoria.getDescripcion());
+        existente.setActivo(categoria.isActivo());
+        existente.setFechaVigencia(categoria.getFechaVigencia());
+
+        return categoriaRepository.save(existente);
+    }
 }

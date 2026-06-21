@@ -121,4 +121,44 @@ public class ProductoService {
             throw e;
         }
     }
+
+
+    // ---- MÉTODOS HATEOAS (V2) ----
+
+    public List<Producto> listarProductosModel() {
+        log.info("HATEOAS - Listando todos los productos");
+        return productoRepository.findAll();
+    }
+
+    public Producto obtenerProductoModelPorId(Integer id) {
+        log.info("HATEOAS - Buscando producto con ID: {}", id);
+        return productoRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Producto no encontrado con ID: " + id));
+    }
+
+    public Producto crearProductoModel(Producto producto) {
+        log.info("HATEOAS - Creando producto");
+        return productoRepository.save(producto);
+    }
+
+    public Producto actualizarProductoModel(Integer id, Producto producto) {
+        log.info("HATEOAS - Actualizando producto con ID: {}", id);
+        Producto existente = productoRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Producto no encontrado con ID: " + id));
+
+        existente.setNombre(producto.getNombre());
+        existente.setCodigo(producto.getCodigo());
+        existente.setPrecio(producto.getPrecio());
+        existente.setStock(producto.getStock());
+        existente.setActivo(producto.isActivo());
+        existente.setFechaRegistro(producto.getFechaRegistro());
+        existente.setCategoria(producto.getCategoria());
+
+        return productoRepository.save(existente);
+    }
+
+    public List<Producto> buscarPorNombreYPrecioMenorModel(String nombre, Double precioMaximo) {
+        log.info("HATEOAS - Buscando productos por nombre '{}' y precio menor a {}", nombre, precioMaximo);
+        return productoRepository.findByNombreContainingIgnoreCaseAndPrecioLessThan(nombre, precioMaximo);
+    }
 }
