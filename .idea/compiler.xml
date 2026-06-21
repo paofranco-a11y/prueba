@@ -10,7 +10,11 @@
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
         </processorPath>
+        <module name="ms-reportes" />
+        <module name="ms-sucursales" />
         <module name="ms-usuario" />
+        <module name="ms-envios" />
+        <module name="ms-proveedores" />
       </profile>
     </annotationProcessing>
   </component>
