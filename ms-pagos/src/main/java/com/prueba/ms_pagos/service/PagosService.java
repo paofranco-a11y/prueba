@@ -16,12 +16,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
-
 @Service
 @RequiredArgsConstructor
 @Slf4j
-
 public class PagosService {
 
     private final PagosRepository pagoRepository;
@@ -37,7 +34,6 @@ public class PagosService {
                 .collect(Collectors.toList());
     }
 
-
     //Obtener pago por id
     public PagosResponseDTO obtenerPorId(Integer id) {
         log.info("Buscando pago con ID {}", id);
@@ -51,10 +47,8 @@ public class PagosService {
         } catch (Exception e) {
             log.warn("No se pudo cargar la informacion completa del pedido ID {}", pago.getPedidoId());
         }
-
         return responseDTO;
     }
-
 
     // Crear pago
     public PagosResponseDTO crear(PagosRequestDTO dto) {
@@ -67,7 +61,6 @@ public class PagosService {
             throw new ResourceNotFoundException("No se puede registrar el pago, el pedido con ID " + dto.getPedidoId() + " no existe.");
         }
 
-        // Validador
         PedidoResponseDTO pedidoObtenido;
         try {
             pedidoObtenido = pedidosCliente.obtenerPedido(dto.getPedidoId());
@@ -93,7 +86,6 @@ public class PagosService {
     }
 
     // Actualizar Pago
-
     public PagosResponseDTO actualizar(Integer id, PagosRequestDTO dto) {
         log.info("Iniciando actualizacion del pago con ID: {}", id);
         Pagos pagoExistente = pagoRepository.findById(id)
@@ -126,19 +118,49 @@ public class PagosService {
         return pagoMapper.toDTO(pagoActualizado);
     }
 
-    //Eliminar pago
-
+    // Eliminar pago
     public void eliminar(Integer id) {
         log.info("Intentando eliminar pago con ID: {}", id);
         if (!pagoRepository.existsById(id)) {
             throw new RuntimeException("No se puede eliminar el pago por ID" + id);
         }
-
         pagoRepository.deleteById(id);
         log.info("El pago con ID {} fue eliminado con exito", id);
     }
 
 
+    // ---- MÉTODOS HATEOAS (V2) ----
 
+    // Lista todos los pagos como entidad (para HATEOAS)
+    public List<Pagos> listarTodosModel() {
+        log.info("HATEOAS - Solicitando lista completa de pagos");
+        return pagoRepository.findAll();
+    }
 
+    // Obtener pago por ID como entidad (para HATEOAS)
+    public Pagos obtenerModelPorId(Integer id) {
+        log.info("HATEOAS - Buscando pago con ID {}", id);
+        return pagoRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Pago no encontrado con ID " + id));
+    }
+
+    // Crear pago desde entidad (para HATEOAS)
+    public Pagos crearModel(Pagos pago) {
+        log.info("HATEOAS - Creando pago para pedido ID: {}", pago.getPedidoId());
+        return pagoRepository.save(pago);
+    }
+
+    // Actualizar pago desde entidad (para HATEOAS)
+    public Pagos actualizarModel(Integer id, Pagos pago) {
+        log.info("HATEOAS - Actualizando pago con ID: {}", id);
+        Pagos existente = pagoRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Pago no encontrado con ID: " + id));
+
+        existente.setPedidoId(pago.getPedidoId());
+        existente.setMetodoPago(pago.getMetodoPago());
+        existente.setEstado(pago.getEstado());
+        existente.setMonto(pago.getMonto());
+
+        return pagoRepository.save(existente);
+    }
 }
