@@ -20,4 +20,8 @@ public class ReporteResponseDTO {
     private Integer totalRegistros;
     private boolean esConsolidado;
     private LocalDate fechaGeneracion;
+
+    private PedidoResponseDTO pedido;
+    private PagosResponseDTO pago;
+    private EnvioResponseDTO envio;
 }

@@ -28,7 +28,7 @@ public class DetallePedidoService {
     @Autowired
     private DetallePedidoMapper mapper;
 
-
+    // Busca todos los detalles guardados y pasarlos a una lista DTO
     public List<DetallePedidoResponseDTO> obtenerTodos() {
         log.info("Consultando todos los detalles de pedidos registrados");
         return repository.findAll().stream()

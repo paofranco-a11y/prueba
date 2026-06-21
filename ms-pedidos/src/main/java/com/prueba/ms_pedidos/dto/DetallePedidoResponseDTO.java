@@ -12,4 +12,7 @@ public class DetallePedidoResponseDTO {
     private Double precioUnitario;
     private Boolean descuentoAplicado;
     private LocalDateTime fechaAgregado;
+
+    // contiene toda la informacion detallada del producto traida desde su propio microservicio
+    private ProductoDTO producto;
 }

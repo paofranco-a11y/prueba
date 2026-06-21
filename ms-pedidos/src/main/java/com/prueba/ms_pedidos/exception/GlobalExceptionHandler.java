@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestControllerAdvice
+// Define un interceptor global para controlar todas las excepciones que ocurran en los controladores
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(ResourceNotFoundException.class)
@@ -19,7 +20,7 @@ public class GlobalExceptionHandler {
         response.put("error", ex.getMessage());
         return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
     }
-
+    // Intercepta las excepciones de validacion automatica cuando los dtos no cumplen
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<Map<String, String>> handleValidationExceptions(MethodArgumentNotValidException ex) {
         Map<String, String> errors = new HashMap<>();
