@@ -5,35 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="800adc69-ea98-400f-bc39-6686c951a518" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13-05-2026_16_11_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13-05-2026_16_11__Changes_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-envios/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ms-envios/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-envios/src/main/resources/db/changelog/db.changelog-master.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-envios/src/main/resources/db/changelog/db.changelog-master.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pagos/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pagos/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pagos/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pagos/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/cliente/ProductoCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/cliente/ProductoCliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/cliente/UsuarioCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/cliente/UsuarioCliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/dto/DetallePedidoResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/dto/DetallePedidoResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/dto/PedidoResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/dto/PedidoResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/service/PedidoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/service/PedidoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-productos/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-productos/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-productos/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ms-productos/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-proveedores/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-reportes/src/main/java/com/ecommerce/ms_reportes/client/EnvioClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-reportes/src/main/java/com/ecommerce/ms_reportes/client/EnvioClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-reportes/src/main/java/com/ecommerce/ms_reportes/client/PagoClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-reportes/src/main/java/com/ecommerce/ms_reportes/client/PagoClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-reportes/src/main/java/com/ecommerce/ms_reportes/client/PedidoClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-reportes/src/main/java/com/ecommerce/ms_reportes/client/PedidoClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-reportes/src/main/java/com/ecommerce/ms_reportes/dto/ReporteResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-reportes/src/main/java/com/ecommerce/ms_reportes/dto/ReporteResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-reportes/src/main/java/com/ecommerce/ms_reportes/service/ReporteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-reportes/src/main/java/com/ecommerce/ms_reportes/service/ReporteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-reportes/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ms-reportes/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-usuario/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ms-usuario/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/controller/PerfilController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/controller/PerfilController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/controller/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/controller/UsuarioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/dto/PerfilDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/dto/PerfilDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/dto/PerfilRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/dto/PerfilRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/dto/UsuarioDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/dto/UsuarioDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/dto/UsuarioRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/dto/UsuarioRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/exception/ResourceNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/exception/ResourceNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/mapper/PerfilMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/mapper/PerfilMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/mapper/UsuarioMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/mapper/UsuarioMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/model/Perfil.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/model/Perfil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/model/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/repository/PerfilRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/repository/PerfilRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/runner/UsuarioRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/runner/UsuarioRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/service/PerfilService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-usuario/src/main/java/com/prueba/ms_usuario/service/PerfilService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

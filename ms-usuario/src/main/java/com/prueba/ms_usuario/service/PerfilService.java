@@ -15,7 +15,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 
+// Activa los logs para poder mostrar mensajes informativos y de error
 @Slf4j
+// Le dice a Spring que esta clase maneja toda la lógica de negocio de los perfiles
 @Service
 public class PerfilService {
 
@@ -28,6 +30,7 @@ public class PerfilService {
     @Autowired
     private PerfilMapper perfilMapper;
 
+    // Busca todos los perfiles de la base de datos y los convierte a DTO para devolverlos
     public List<PerfilDTO> listarPerfiles() {
         log.info("Service: Obteniendo listado de todos los perfiles");
         try {
@@ -40,6 +43,7 @@ public class PerfilService {
         }
     }
 
+    // Busca un perfil por su ID; si no lo encuentra, lanza un error personalizado
     public PerfilDTO obtenerPerfilPorId(Integer id) {
         log.info("Service: Buscando perfil ID: {}", id);
         try {
@@ -55,6 +59,7 @@ public class PerfilService {
         }
     }
 
+    // Valida que exista el usuario en la base de datos y le crea un nuevo perfil asignado
     public PerfilDTO crearPerfil(PerfilRequestDTO dto) {
         log.info("Service: Creando perfil para usuario ID: {}", dto.getUsuarioId());
         try {
@@ -73,6 +78,7 @@ public class PerfilService {
         }
     }
 
+    // Busca el perfil y el usuario correspondientes y actualiza todos sus datos en la base de datos
     public PerfilDTO actualizarPerfil(Integer id, PerfilRequestDTO dto) {
         log.info("Service: Actualizando datos del perfil ID: {}", id);
         try {
@@ -100,6 +106,7 @@ public class PerfilService {
         }
     }
 
+    // Busca el perfil por su ID y, si existe, lo borra definitivamente de la base de datos
     public void eliminarPerfil(Integer id) {
         log.info("Service: Eliminando perfil ID: {}", id);
         try {

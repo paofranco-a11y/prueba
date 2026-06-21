@@ -13,7 +13,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 
+// Activa los logs para poder mostrar mensajes informativos y de error en la consola
 @Slf4j
+// Le dice a Spring que esta clase maneja toda la lógica de negocio de los usuarios
 @Service
 public class UsuarioService {
 
@@ -23,6 +25,7 @@ public class UsuarioService {
     @Autowired
     private UsuarioMapper usuarioMapper;
 
+    // Busca y devuelve a todos los usuarios de la base de datos transformados en DTO
     public List<UsuarioDTO> listarUsuarios() {
         log.info("Service: Listando todos los usuarios de la base de datos");
         try {
@@ -35,6 +38,7 @@ public class UsuarioService {
         }
     }
 
+    // Busca un usuario por su ID y lo devuelve; si no existe, lanza la excepción personalizada
     public UsuarioDTO obtenerUsuarioPorId(Integer id) {
         log.info("Service: Buscando usuario con ID: {}", id);
         try {
@@ -50,6 +54,7 @@ public class UsuarioService {
         }
     }
 
+    // Convierte el DTO de entrada en entidad y guarda al usuario nuevo en la base de datos
     public UsuarioDTO crearUsuario(UsuarioRequestDTO dto) {
         log.info("Service: Intentando crear usuario con email: {}", dto.getEmail());
         try {
@@ -63,6 +68,7 @@ public class UsuarioService {
         }
     }
 
+    // Localiza al usuario por ID y actualiza todos sus campos con los nuevos datos recibidos
     public UsuarioDTO actualizarUsuario(Integer id, UsuarioRequestDTO dto) {
         log.info("Service: Intentando actualizar usuario ID: {}", id);
         try {
@@ -88,6 +94,7 @@ public class UsuarioService {
         }
     }
 
+    // Busca un usuario por su ID y lo remueve por completo de la base de datos
     public void eliminarUsuario(Integer id) {
         log.info("Service: Solicitud para eliminar usuario ID: {}", id);
         try {
@@ -104,6 +111,7 @@ public class UsuarioService {
         }
     }
 
+    // Utiliza el metodo personalizado del repositorio para buscar usuarios activos que coincidan con el email
     public List<UsuarioDTO> buscarPorEmail(String email) {
         log.info("Service: Buscando usuarios activos por email: {}", email);
         try {
