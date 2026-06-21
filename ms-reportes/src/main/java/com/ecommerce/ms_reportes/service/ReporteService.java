@@ -1,9 +1,11 @@
 package com.ecommerce.ms_reportes.service;
 
-
 import com.ecommerce.ms_reportes.client.EnvioClient;
 import com.ecommerce.ms_reportes.client.PagoClient;
 import com.ecommerce.ms_reportes.client.PedidoClient;
+import com.ecommerce.ms_reportes.dto.EnvioResponseDTO;
+import com.ecommerce.ms_reportes.dto.PagosResponseDTO;
+import com.ecommerce.ms_reportes.dto.PedidoResponseDTO;
 import com.ecommerce.ms_reportes.dto.ReporteRequestDTO;
 import com.ecommerce.ms_reportes.dto.ReporteResponseDTO;
 import com.ecommerce.ms_reportes.mapper.ReporteMapper;
@@ -51,17 +53,28 @@ public class ReporteService {
     public ReporteResponseDTO save(ReporteRequestDTO dto) {
         log.info("Ejecutando método save para crear un nuevo reporte de tipo: {}", dto.getTipoReporte());
         try {
-
-            List<Object> pedidos = pedidoClient.obtenerPedidosParaReporte();
-            List<Object> pagos = pagoClient.obtenerPagosParaReporte();
-            List<Object> envios = envioClient.obtenerEnviosParaReporte();
+            // Obtenemos los DTOs reales y tipados desde los Feign Clients
+            List<PedidoResponseDTO> pedidos = pedidoClient.obtenerPedidosParaReporte();
+            List<PagosResponseDTO> pagos = pagoClient.obtenerPagosParaReporte();
+            List<EnvioResponseDTO> envios = envioClient.obtenerEnviosParaReporte();
 
             log.info("Datos consolidados exitosamente. Pedidos: {}, Pagos: {}, Envíos: {}",
                     pedidos.size(), pagos.size(), envios.size());
 
+            // Convertimos el request a entidad original y guardamos en BD
             Reporte reporte = ReporteMapper.toEntity(dto);
             Reporte guardado = reporteRepository.save(reporte);
-            return ReporteMapper.toDTO(guardado);
+
+            // Mapeamos a ResponseDTO
+            ReporteResponseDTO responseDTO = ReporteMapper.toDTO(guardado);
+
+            // PASO 4: Enriquecemos la respuesta asociando los objetos si la lista contiene elementos (tipo el ejemplo de Inventario)
+            if (!pedidos.isEmpty()) responseDTO.setPedido(pedidos.get(0));
+            if (!pagos.isEmpty()) responseDTO.setPago(pagos.get(0));
+            if (!envios.isEmpty()) responseDTO.setEnvio(envios.get(0));
+
+            return responseDTO;
+
         } catch (Exception e) {
             log.error("Error crítico en la comunicación con microservicios al consolidar reporte: {}", e.getMessage());
             throw new RuntimeException("Error al consolidar el reporte. Verifique que los microservicios externos estén operativos.");

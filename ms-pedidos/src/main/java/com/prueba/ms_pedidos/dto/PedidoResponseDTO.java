@@ -13,5 +13,7 @@ public class PedidoResponseDTO {
     private Double total;
     private Boolean pagado;
     private String direccionEnvio;
+
+    private UsuarioDTO usuario;
     private List<DetallePedidoResponseDTO> detalles;
 }

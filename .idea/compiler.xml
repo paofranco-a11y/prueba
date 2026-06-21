@@ -9,21 +9,51 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
         </processorPath>
         <module name="ms-sucursales" />
-        <module name="ms-productos" />
         <module name="ms-usuario" />
-        <module name="ms-pagos" />
         <module name="ms-proveedores" />
+      </profile>
+      <profile name="Annotation profile for ms-pagos" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
+        </processorPath>
+        <module name="ms-pagos" />
+      </profile>
+      <profile name="Annotation profile for ms-envios" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
+        </processorPath>
+        <module name="ms-reportes" />
+        <module name="ms-envios" />
+      </profile>
+      <profile name="Annotation profile for ms-productos" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
+        </processorPath>
+        <module name="ms-productos" />
+        <module name="ms-pedidos" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ms-envios" options="-parameters" />
       <module name="ms-pagos" options="-parameters" />
+      <module name="ms-pedidos" options="-parameters" />
       <module name="ms-productos" options="-parameters" />
       <module name="ms-proveedores" options="-parameters" />
+      <module name="ms-reportes" options="-parameters" />
       <module name="ms-sucursales" options="-parameters" />
       <module name="ms-usuario" options="-parameters" />
     </option>

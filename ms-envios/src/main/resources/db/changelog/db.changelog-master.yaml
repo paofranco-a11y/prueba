@@ -91,33 +91,33 @@ databaseChangeLog:
               - column: { name: pedido_id, value: 101 }
               - column: { name: direccion_destino, value: "Av. Providencia 1234, Santiago" }
               - column: { name: costo_envio, value: 3500.0 }
-              - column: { name: es_internacional, value: false }
+              - column: { name: es_internacional, value: 0 }
               - column: { name: fecha_despacho, value: "2026-06-10" }
-        - insert:
-            tableName: envios
-            columns:
-              - column: { name: id, value: 2 }
-              - column: { name: pedido_id, value: 102 }
-              - column: { name: direccion_destino, value: "Calle Larga 567, Valparaiso" }
-              - column: { name: costo_envio, value: 4500.0 }
-              - column: { name: es_internacional, value: false }
-              - column: { name: fecha_despacho, value: "2026-06-12" }
-        - insert:
-            tableName: envios
-            columns:
-              - column: { name: id, value: 3 }
-              - column: { name: pedido_id, value: 103 }
-              - column: { name: direccion_destino, value: "Miami Suite 404, USA" }
-              - column: { name: costo_envio, value: 25000.0 }
-              - column: { name: es_internacional, value: true }
-              - column: { name: fecha_despacho, value: "2026-06-14" }
-        - insert:
-            tableName: seguimientos
-            columns:
-              - column: { name: id, value: 1 }
-              - column: { name: envio_id, value: 1 }
-              - column: { name: estado_actual, value: "EN_CAMINO" }
-              - column: { name: ubicacion_actual, value: "Centro de Distribucion Santiago" }
-              - column: { name: porcentaje_progreso, value: 50 }
-              - column: { name: requiere_firma, value: true }
-              - column: { name: fecha_actualizacion, value: "2026-06-14" }
+              - insert:
+                  tableName: envios
+                  columns:
+                    - column: { name: id, value: 2 }
+                    - column: { name: pedido_id, value: 102 }
+                    - column: { name: direccion_destino, value: "Calle Larga 567, Valparaiso" }
+                    - column: { name: costo_envio, value: 4500.0 }
+                    - column: { name: es_internacional, value: 0 }
+                    - column: { name: fecha_despacho, value: "2026-06-12" }
+              - insert:
+                  tableName: envios
+                  columns:
+                    - column: { name: id, value: 3 }
+                    - column: { name: pedido_id, value: 103 }
+                    - column: { name: direccion_destino, value: "Miami Suite 404, USA" }
+                    - column: { name: costo_envio, value: 25000.0 }
+                    - column: { name: es_internacional, value: 1 }
+                    - column: { name: fecha_despacho, value: "2026-06-14" }
+              - insert:
+                  tableName: seguimientos
+                  columns:
+                    - column: { name: id, value: 1 }
+                    - column: { name: envio_id, value: 1 }
+                    - column: { name: estado_actual, value: "EN_CAMINO" }
+                    - column: { name: ubicacion_actual, value: "Centro de Distribucion Santiago" }
+                    - column: { name: porcentaje_progreso, value: 50 }
+                    - column: { name: requiere_firma, value: 1 }
+                    - column: { name: fecha_actualizacion, value: "2026-06-14" }

@@ -1,11 +1,13 @@
 package com.prueba.ms_pedidos.cliente;
 
+import com.prueba.ms_pedidos.dto.UsuarioDTO; // <-- Importamos tu DTO
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @FeignClient(name = "ms-usuarios", url = "http://localhost:8081/api/v1/usuarios")
 public interface UsuarioCliente {
+
     @GetMapping("/{id}")
-    Object validarUsuario(@PathVariable("id") Integer id);
+    UsuarioDTO obtenerUsuario(@PathVariable("id") Integer id); // <-- Tipado con UsuarioDTO
 }
