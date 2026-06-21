@@ -1,5 +1,6 @@
 package com.prueba.ms_pedidos.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -46,5 +47,6 @@ public class Pedido {
 
     // Define relacion de uno a muchos mapeada por el atributo pedido en la otra clase, con borrado en cascada y eliminacion de huerfanos activa
     @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private List<DetallePedido> detalles;
 }
