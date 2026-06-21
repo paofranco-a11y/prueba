@@ -6,56 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="800adc69-ea98-400f-bc39-6686c951a518" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pagos/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pagos/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pagos/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pagos/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ms-pedidos/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/MsPedidosApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/MsPedidosApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/cliente/ProductoCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/cliente/ProductoCliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/cliente/UsuarioCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/cliente/UsuarioCliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/controller/DetallePedidoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/controller/DetallePedidoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/controller/PedidoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/controller/PedidoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/dto/DetallePedidoRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/dto/DetallePedidoRequestDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/dto/DetallePedidoResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/dto/DetallePedidoResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/dto/PedidoRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/dto/PedidoRequestDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/dto/PedidoResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/dto/PedidoResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/dto/ProductoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/dto/ProductoDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/dto/UsuarioDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/dto/UsuarioDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/exception/ResourceNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/exception/ResourceNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/mapper/DetallePedidoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/mapper/DetallePedidoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/mapper/PedidoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/mapper/PedidoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/model/DetallePedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/model/DetallePedido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/model/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/model/Pedido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/repository/DetallePedidoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/repository/DetallePedidoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/repository/PedidoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/repository/PedidoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/service/DetallePedidoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/service/DetallePedidoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-productos/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-productos/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-productos/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ms-productos/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-usuario/${project.build.directory}/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-usuario/${project.build.directory}/classes/com/prueba/ms_usuario/MsUsuarioApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-usuario/${project.build.directory}/classes/com/prueba/ms_usuario/controller/PerfilController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-usuario/${project.build.directory}/classes/com/prueba/ms_usuario/controller/UsuarioController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-usuario/${project.build.directory}/classes/com/prueba/ms_usuario/dto/PerfilDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-usuario/${project.build.directory}/classes/com/prueba/ms_usuario/dto/PerfilRequestDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-usuario/${project.build.directory}/classes/com/prueba/ms_usuario/dto/UsuarioDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-usuario/${project.build.directory}/classes/com/prueba/ms_usuario/dto/UsuarioRequestDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-usuario/${project.build.directory}/classes/com/prueba/ms_usuario/exception/GlobalExceptionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-usuario/${project.build.directory}/classes/com/prueba/ms_usuario/exception/ResourceNotFoundException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-usuario/${project.build.directory}/classes/com/prueba/ms_usuario/mapper/PerfilMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-usuario/${project.build.directory}/classes/com/prueba/ms_usuario/mapper/UsuarioMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-usuario/${project.build.directory}/classes/com/prueba/ms_usuario/model/Perfil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-usuario/${project.build.directory}/classes/com/prueba/ms_usuario/model/Usuario.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-usuario/${project.build.directory}/classes/com/prueba/ms_usuario/repository/PerfilRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-usuario/${project.build.directory}/classes/com/prueba/ms_usuario/repository/UsuarioRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-usuario/${project.build.directory}/classes/com/prueba/ms_usuario/runner/UsuarioRunner.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-usuario/${project.build.directory}/classes/com/prueba/ms_usuario/service/PerfilService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-usuario/${project.build.directory}/classes/com/prueba/ms_usuario/service/UsuarioService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ms-usuario/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-usuario/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-usuario/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ms-usuario/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,7 +137,7 @@
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.MsInventarioApplication">
+  <component name="RunManager" selected="Spring Boot.MsPedidosApplication">
     <configuration name="V1__init.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
       <script-file value="$PROJECT_DIR$/ms-pedidos/src/main/resources/db/migration/V1__init.sql" />
       <script-mode>FILE</script-mode>
