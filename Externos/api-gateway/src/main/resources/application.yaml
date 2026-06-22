@@ -1,0 +1,45 @@
+server:
+  port: 8080 # Puerto público único de entrada visible al mundo
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        # 1. MICROSERVICIO USUARIOS
+        - id: usuarios-route
+          uri: lb://MS-USUARIO
+          predicates:
+            - Path=/api/usuarios/**
+
+        # 2. MICROSERVICIO PEDIDOS
+        - id: pedidos-route
+          uri: lb://MS-PEDIDO
+          predicates:
+            - Path=/api/pedidos/**
+
+        # 4. MICROSERVICIO PAGOS
+        - id: pagos-route
+          uri: lb://MS-PAGO
+          predicates:
+            - Path=/api/pagos/**
+
+        # 5. MICROSERVICIO INVENTARIOS
+        - id: inventarios-route
+          uri: lb://MS-INVENTARIO
+          predicates:
+            - Path=/api/inventarios/**
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG # Ayuda a diagnosticar errores de enrutamiento

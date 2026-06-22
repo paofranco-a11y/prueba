@@ -4,29 +4,13 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/ms-pagos/pom.xml" />
-        <option value="$PROJECT_DIR$/ms-usuario/pom.xml" />
-        <option value="$PROJECT_DIR$/ms-sucursales/pom.xml" />
-        <option value="$PROJECT_DIR$/ms-proveedores/pom.xml" />
-        <option value="$PROJECT_DIR$/ms-productos/pom.xml" />
-        <option value="$PROJECT_DIR$/ms-reportes/pom.xml" />
-        <option value="$PROJECT_DIR$/ms-pedidos/pom.xml" />
-        <option value="$PROJECT_DIR$/ms-envios/pom.xml" />
-        <option value="$PROJECT_DIR$/ms-inventario/pom.xml" />
-        <option value="$PROJECT_DIR$/ms-empleados/pom.xml" />
-<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/Externos/api-gateway/pom.xml" />
         <option value="$PROJECT_DIR$/Externos/eureka-server/pom.xml" />
-        <option value="$PROJECT_DIR$/ms-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/ms-pagos/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="ms-17" project-jdk-type="JavaSDK">
-=======
-      </list>
-    </option>
-  </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
->>>>>>> 482682c99063b65448861f0a3236ab6fcda5b08a
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_24" default="true" project-jdk-name="24" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
