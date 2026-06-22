@@ -1,4 +1,4 @@
-# Arquitectura de Microservicios - Examen Final
+# Arquitectura de Microservicios - E-commerce
 
 Este repositorio contiene un ecosistema de **10 microservicios** desarrollado bajo un enfoque modular, escalable y robusto. El objetivo del proyecto es implementar comunicación inter-servicio eficiente, documentación estandarizada, navegación dinámica y pruebas unitarias de alta cobertura.
 
