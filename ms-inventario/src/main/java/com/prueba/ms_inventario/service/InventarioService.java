@@ -1,7 +1,6 @@
 package com.prueba.ms_inventario.service;
 
-
-import  com.prueba.ms_inventario.cliente.ProductoCliente;
+import com.prueba.ms_inventario.cliente.ProductoCliente;
 import com.prueba.ms_inventario.dto.InventarioRequestDTO;
 import com.prueba.ms_inventario.dto.InventarioResponseDTO;
 import com.prueba.ms_inventario.dto.ProductoResponseDTO;
@@ -35,7 +34,6 @@ public class InventarioService {
                 .map(inventarioMapper::toDTO)
                 .collect(Collectors.toList());
     }
-
 
     // Metodo Obtener por un ID especifico
     public InventarioResponseDTO obtenerPorId(Integer id) {
@@ -75,18 +73,17 @@ public class InventarioService {
         return inventarioMapper.toDTO(guardado);
     }
 
-
     // Metodo para actualizar un inventario
     public InventarioResponseDTO actualizar(Integer id, InventarioRequestDTO dto) {
         log.info("Iniciando actualizacion del inventario con ID: {}", id);
 
         Inventario inventarioExistente = inventarioRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Inventario no encontrado con ID: " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Inventario no encontrado con ID: " + id));
 
-        // Se valida que un producto existe para validar la actualizacion del inventario
+        // Se valida que un producto existe para validar la actualizacion en el inventario
         try {
             productoCliente.obtenerProducto(dto.getProductoId());
-            log.info("producto validado correctamente");
+            log.info("Producto validado correctamente");
         } catch (Exception e) {
             log.error("Error {}", e.getMessage());
             throw new ResourceNotFoundException("No se pudo actualizar el inventario, el producto con el ID " + dto.getProductoId() + " no existe en el sistema");
@@ -102,27 +99,14 @@ public class InventarioService {
         Inventario inventarioActualizado = inventarioRepository.save(inventarioExistente);
         log.info("Inventario con ID: {} actualizado correctamente en DB", id);
         return inventarioMapper.toDTO(inventarioActualizado);
-
     }
 
     //Metodo para eliminar un inventario
     public void eliminar(Integer id) {
         log.info("Eliminando inventario con ID: {}", id);
-        Inventario producto = inventarioRepository.findById(id)
+        Inventario inventario = inventarioRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("No se puede eliminar el Inventario con ID " + id));
-        inventarioRepository.delete(producto);
+        inventarioRepository.delete(inventario);
         log.info("Inventario eliminado correctamente");
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
