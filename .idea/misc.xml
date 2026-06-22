@@ -14,10 +14,19 @@
         <option value="$PROJECT_DIR$/ms-envios/pom.xml" />
         <option value="$PROJECT_DIR$/ms-inventario/pom.xml" />
         <option value="$PROJECT_DIR$/ms-empleados/pom.xml" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/Externos/eureka-server/pom.xml" />
+        <option value="$PROJECT_DIR$/ms-gateway/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="ms-17" project-jdk-type="JavaSDK">
+=======
       </list>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
+>>>>>>> 482682c99063b65448861f0a3236ab6fcda5b08a
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
