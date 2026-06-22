@@ -99,7 +99,7 @@ Robustez garantizada mediante un set de pruebas ejecutadas con **JUnit 5** y **M
 * `ms-productos`: 7 pruebas críticas superadas.
 * `ms-pedidos`: 7 pruebas críticas superadas.
 * `ms-inventario`: 4 pruebas críticas superadas.
-* `ms-usuarios`: # pruebas críticas superadas.
+* `ms-usuarios`: 10 pruebas críticas superadas.
 ---
 
 ## Instalación y Ejecución Local
