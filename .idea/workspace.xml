@@ -4,18 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="800adc69-ea98-400f-bc39-6686c951a518" name="Changes" comment="ms-pagos y ms-productos, yml creado.">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="e6369438-5236-4a12-9df0-ac16825bd728" name="Changes" comment="Actualización documentación ms-pedidos con swagger y HATEOAS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/cliente/UsuarioCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/cliente/UsuarioCliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/controller/DetallePedidoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/controller/DetallePedidoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/controller/PedidoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/controller/PedidoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/model/DetallePedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/model/DetallePedido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/model/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/model/Pedido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/service/DetallePedidoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/service/DetallePedidoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/service/PedidoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/java/com/prueba/ms_pedidos/service/PedidoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-pedidos/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ms-pedidos/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,294 +15,131 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Exception" />
-        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;nasheii66&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/paofranco-a11y/prueba.git&quot;,
-    &quot;accountId&quot;: &quot;4bfbb348-5392-4867-a3a5-717e820b942a&quot;
-  }
-}</component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/ms-pedidos/src/main/resources/application.properties" root0="SKIP_INSPECTION" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
-  </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 4,
-  &quot;fromUser&quot;: false
-}</component>
-  <component name="ProjectId" id="3DgO0rVNElmBTlVICbrRtPRJUu9" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Maven.ms-pedidos [clean].executor": "Run",
-    "Maven.ms-pedidos [install].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.MsInventarioApplication.executor": "Run",
+    "JUnit.CategoriaServiceTest.executor": "Run",
+    "JUnit.DetallePedidoServiceTest.executor": "Run",
+    "JUnit.PagosServiceTest.executor": "Run",
+    "JUnit.PedidoServiceTest.executor": "Run",
+    "JUnit.ProductoServiceTest.executor": "Run",
     "Spring Boot.MsPagosApplication.executor": "Run",
-    "Spring Boot.MsPedidosApplication.executor": "Run",
     "Spring Boot.MsProductosApplication.executor": "Run",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/olive/OneDrive/Desktop/proyecto",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler",
-    "vue.rearranger.settings.migration": "true"
+    "last_opened_file_path": "C:/Users/Usuario/OneDrive/Desktop/exament-test/ms-pedidos/src"
   }
 }]]></component>
-  <component name="RunAnythingContextRecentDirectoryCache">
-    <option name="paths">
-      <recentPaths value="$PROJECT_DIR$" />
-    </option>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Usuario\OneDrive\Desktop\exament-test\ms-pedidos\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Usuario\OneDrive\Desktop\exament-test\ms-pedidos\src\test" />
+    </key>
   </component>
-  <component name="RunDashboard">
-    <option name="configurationTypes">
-      <set>
-        <option value="KtorApplicationConfigurationType" />
-        <option value="MicronautRunConfigurationType" />
-        <option value="QuarkusRunConfigurationType" />
-        <option value="SpringBootApplicationConfigurationType" />
-      </set>
-    </option>
-    <option name="configurationStatuses">
-      <map>
-        <entry key="SpringBootApplicationConfigurationType">
-          <value>
-            <map>
-              <entry key="MsInventarioApplication" value="STOPPED" />
-              <entry key="MsPagosApplication" value="STOPPED" />
-              <entry key="MsPedidosApplication" value="STOPPED" />
-              <entry key="MsProductosApplication" value="STOPPED" />
-            </map>
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="RunManager" selected="Spring Boot.MsPedidosApplication">
-    <configuration name="V1__init.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
-      <script-file value="$PROJECT_DIR$/ms-pedidos/src/main/resources/db/migration/V1__init.sql" />
-      <script-mode>FILE</script-mode>
-      <method v="2" />
-    </configuration>
-    <configuration name="MsEnviosApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
-      <module name="ms-envios" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ecommerce.ms_envios.MsEnviosApplication" />
+  <component name="RunManager" selected="JUnit.DetallePedidoServiceTest">
+    <configuration name="CategoriaServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ms-productos" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.ecommerce.ms_envios.*" />
+          <option name="PATTERN" value="com.prueba.ms_productos.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-    <configuration name="MsEmpleadosApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="ms-empleados" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ecommerce.ms_empleados.MsEmpleadosApplication" />
+      <option name="PACKAGE_NAME" value="com.prueba.ms_productos" />
+      <option name="MAIN_CLASS_NAME" value="com.prueba.ms_productos.CategoriaServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MsEnviosApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="ms-envios" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ecommerce.ms_envios.MsEnviosApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MsInventarioApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="ms-inventario" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.prueba.ms_inventario.MsInventarioApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MsPagosApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="ms-pagos" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.prueba.ms_pagos.MsPagosApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MsPedidosApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <configuration name="DetallePedidoServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ms-pedidos" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.prueba.ms_pedidos.MsPedidosApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.prueba.ms_pedidos.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.prueba.ms_pedidos" />
+      <option name="MAIN_CLASS_NAME" value="com.prueba.ms_pedidos.DetallePedidoServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MsProductosApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <configuration name="PagosServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ms-pagos" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.prueba.ms_pagos.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.prueba.ms_pagos" />
+      <option name="MAIN_CLASS_NAME" value="com.prueba.ms_pagos.PagosServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PedidoServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ms-pedidos" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.prueba.ms_pedidos.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.prueba.ms_pedidos" />
+      <option name="MAIN_CLASS_NAME" value="com.prueba.ms_pedidos.PedidoServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductoServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ms-productos" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.prueba.ms_productos.MsProductosApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MsProveedoresApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="ms-proveedores" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.prueba.ms_proveedores.MsProveedoresApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MsReportesApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="ms-reportes" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ecommerce.ms_reportes.MsReportesApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MsSucursalesApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="ms-sucursales" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.prueba.ms_sucursales.MsSucursalesApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MsUsuarioApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="ms-usuario" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.prueba.ms_usuario.MsUsuarioApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.prueba.ms_productos.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.prueba.ms_productos" />
+      <option name="MAIN_CLASS_NAME" value="com.prueba.ms_productos.ProductoServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Database Script.V1__init.sql" />
+        <item itemvalue="JUnit.DetallePedidoServiceTest" />
+        <item itemvalue="JUnit.PedidoServiceTest" />
+        <item itemvalue="JUnit.CategoriaServiceTest" />
+        <item itemvalue="JUnit.ProductoServiceTest" />
+        <item itemvalue="JUnit.PagosServiceTest" />
       </list>
     </recent_temporary>
   </component>
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="800adc69-ea98-400f-bc39-6686c951a518" name="Changes" comment="" />
-      <created>1778700025924</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1778700025924</updated>
-      <workItem from="1778700026952" duration="26195000" />
-      <workItem from="1778732287414" duration="2788000" />
-      <workItem from="1778811508546" duration="16000" />
-      <workItem from="1778976382276" duration="11856000" />
-      <workItem from="1779038172921" duration="12000" />
-      <workItem from="1779038804369" duration="19555000" />
-      <workItem from="1779064085623" duration="1505000" />
-      <workItem from="1779065656142" duration="628000" />
-      <workItem from="1779144854965" duration="543000" />
-      <workItem from="1779145409743" duration="2000" />
-      <workItem from="1779145482657" duration="8355000" />
-    </task>
-    <task id="LOCAL-00001" summary="ms-pagos y ms-productos documentado con OpenApi y HATEOAS, implementacion de eureka en ms-pagos y ms-inventario.">
+    <task id="LOCAL-00001" summary="Actualización documentación ms-pedidos con swagger y HATEOAS">
       <option name="closed" value="true" />
-      <created>1782031455664</created>
+      <created>1782075391127</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1782031455664</updated>
+      <updated>1782075391127</updated>
     </task>
-    <task id="LOCAL-00002" summary="ms-pagos y ms-productos documentado con OpenApi y HATEOAS, implementacion de eureka en ms-pagos y ms-inventario.">
-      <option name="closed" value="true" />
-      <created>1782031672127</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1782031672127</updated>
-    </task>
-    <task id="LOCAL-00003" summary="ms-pagos y ms-productos documentado con OpenApi y HATEOAS, implementacion de eureka en ms-pagos y ms-inventario.">
-      <option name="closed" value="true" />
-      <created>1782032000676</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1782032000676</updated>
-    </task>
-    <task id="LOCAL-00004" summary="ms-pagos y ms-productos, yml creado.">
-      <option name="closed" value="true" />
-      <created>1782067412270</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1782067412270</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Arreglo de FeignClient para ms-pagos y ms-inventarios" />
-    <MESSAGE value="ms-pagos y ms-productos documentado con OpenApi y HATEOAS, implementacion de eureka en ms-pagos y ms-inventario." />
-    <MESSAGE value="ms-pagos y ms-productos, yml creado." />
-    <option name="LAST_COMMIT_MESSAGE" value="ms-pagos y ms-productos, yml creado." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="org.hibernate.tool.schema.spi.SchemaManagementException" package="org.hibernate.tool.schema.spi" />
-          <option name="timeStamp" value="2" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Actualización documentación ms-pedidos con swagger y HATEOAS" />
+    <option name="LAST_COMMIT_MESSAGE" value="Actualización documentación ms-pedidos con swagger y HATEOAS" />
   </component>
 </project>
