@@ -7,7 +7,7 @@ import com.prueba.ms_proveedores.mapper.ProveedorMapper;
 import com.prueba.ms_proveedores.model.Proveedor;
 import com.prueba.ms_proveedores.repository.ProveedorRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,13 +15,12 @@ import java.util.stream.Collectors;
 
 @Slf4j
 @Service
+@RequiredArgsConstructor
 public class ProveedorService {
 
-    @Autowired
-    private ProveedorRepository proveedorRepository;
+    private final ProveedorRepository proveedorRepository;
+    private final ProveedorMapper proveedorMapper;
 
-    @Autowired
-    private ProveedorMapper proveedorMapper;
 
     // 1. GET - Listar todos los proveedores
     public List<ProveedorDTO> listarTodos() {
@@ -38,7 +37,7 @@ public class ProveedorService {
         Proveedor proveedor = proveedorRepository.findById(id)
                 .orElseThrow(() -> {
                     log.error("Service: Proveedor con ID {} no fue encontrado", id);
-                    return new ResourceNotFoundException("Proveedor no encontrado con el ID: " + id);
+                    return new ResourceNotFoundException("El proveedor no encontrado con el ID: " + id);
                 });
         return proveedorMapper.toDTO(proveedor);
     }

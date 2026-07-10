@@ -4,19 +4,21 @@ import com.prueba.ms_proveedores.dto.ProveedorDTO;
 import com.prueba.ms_proveedores.dto.ProveedorRequestDTO;
 import com.prueba.ms_proveedores.service.ProveedorService;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import lombok.RequiredArgsConstructor;
+
 
 import java.util.List;
 
+
 @RestController
 @RequestMapping("/api/v1")
+@RequiredArgsConstructor
 public class ProveedorController {
 
-    @Autowired
-    private ProveedorService proveedorService;
+    private final ProveedorService proveedorService;
 
     @GetMapping("/proveedores")
     public ResponseEntity<List<ProveedorDTO>> listarTodos() {

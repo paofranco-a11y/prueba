@@ -9,7 +9,7 @@ import com.prueba.ms_proveedores.model.Proveedor;
 import com.prueba.ms_proveedores.repository.ContratoRepository;
 import com.prueba.ms_proveedores.repository.ProveedorRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,16 +17,12 @@ import java.util.stream.Collectors;
 
 @Slf4j // Agrega logs automáticos requeridos por la pauta
 @Service
+@RequiredArgsConstructor
 public class ContratoService {
 
-    @Autowired
-    private ContratoRepository contratoRepository;
-
-    @Autowired
-    private ProveedorRepository proveedorRepository;
-
-    @Autowired
-    private ContratoMapper contratoMapper;
+    private final ContratoRepository contratoRepository;
+    private final ProveedorRepository proveedorRepository;
+    private final ContratoMapper contratoMapper;
 
 
     public List<ContratoDTO> listarTodos() {
