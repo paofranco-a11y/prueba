@@ -1,17 +1,17 @@
 package com.ecommerce.ms_envios.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDate;
 
+
+@Getter
+@Setter
 @Entity
 @Table(name = "seguimientos")
-@Data                       // Genera Getters, Setters, toString, equals y hashCode automáticamente
-@NoArgsConstructor          // Constructor vacío obligatorio para Hibernate/JPA
-@AllArgsConstructor         // Constructor con todos los campos para crearlo fácilmente en tu código
+@NoArgsConstructor          // Constructor vacio obligatorio para Hibernate/JPA
+@AllArgsConstructor         // Constructor con todos los campos para crearlo facilmente en tu codigo
 public class Seguimiento {
 
     @Id

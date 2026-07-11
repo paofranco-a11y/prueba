@@ -93,31 +93,90 @@ databaseChangeLog:
               - column: { name: costo_envio, value: 3500.0 }
               - column: { name: es_internacional, value: 0 }
               - column: { name: fecha_despacho, value: "2026-06-10" }
-              - insert:
-                  tableName: envios
-                  columns:
-                    - column: { name: id, value: 2 }
-                    - column: { name: pedido_id, value: 102 }
-                    - column: { name: direccion_destino, value: "Calle Larga 567, Valparaiso" }
-                    - column: { name: costo_envio, value: 4500.0 }
-                    - column: { name: es_internacional, value: 0 }
-                    - column: { name: fecha_despacho, value: "2026-06-12" }
-              - insert:
-                  tableName: envios
-                  columns:
-                    - column: { name: id, value: 3 }
-                    - column: { name: pedido_id, value: 103 }
-                    - column: { name: direccion_destino, value: "Miami Suite 404, USA" }
-                    - column: { name: costo_envio, value: 25000.0 }
-                    - column: { name: es_internacional, value: 1 }
-                    - column: { name: fecha_despacho, value: "2026-06-14" }
-              - insert:
-                  tableName: seguimientos
-                  columns:
-                    - column: { name: id, value: 1 }
-                    - column: { name: envio_id, value: 1 }
-                    - column: { name: estado_actual, value: "EN_CAMINO" }
-                    - column: { name: ubicacion_actual, value: "Centro de Distribucion Santiago" }
-                    - column: { name: porcentaje_progreso, value: 50 }
-                    - column: { name: requiere_firma, value: 1 }
-                    - column: { name: fecha_actualizacion, value: "2026-06-14" }
+        - insert:
+            tableName: envios
+            columns:
+              - column: { name: id, value: 2 }
+              - column: { name: pedido_id, value: 102 }
+              - column: { name: direccion_destino, value: "Calle Larga 567, Valparaiso" }
+              - column: { name: costo_envio, value: 4500.0 }
+              - column: { name: es_internacional, value: 0 }
+              - column: { name: fecha_despacho, value: "2026-06-12" }
+        - insert:
+            tableName: envios
+            columns:
+              - column: { name: id, value: 3 }
+              - column: { name: pedido_id, value: 103 }
+              - column: { name: direccion_destino, value: "Miami Suite 404, USA" }
+              - column: { name: costo_envio, value: 25000.0 }
+              - column: { name: es_internacional, value: 1 }
+              - column: { name: fecha_despacho, value: "2026-06-14" }
+        - insert:
+            tableName: envios
+            columns:
+              - column: { name: id, value: 4 }
+              - column: { name: pedido_id, value: 104 }
+              - column: { name: direccion_destino, value: "Av. Libertad 888, Viña del Mar" }
+              - column: { name: costo_envio, value: 4200.0 }
+              - column: { name: es_internacional, value: 0 }
+              - column: { name: fecha_despacho, value: "2026-06-15" }
+        - insert:
+            tableName: envios
+            columns:
+              - column: { name: id, value: 5 }
+              - column: { name: pedido_id, value: 105 }
+              - column: { name: direccion_destino, value: "Calle Falsa 123, Madrid" }
+              - column: { name: costo_envio, value: 30000.0 }
+              - column: { name: es_internacional, value: 1 }
+              - column: { name: fecha_despacho, value: "2026-06-16" }
+        # SEGUIMIENTOS
+        - insert:
+            tableName: seguimientos
+            columns:
+              - column: { name: id, value: 1 }
+              - column: { name: envio_id, value: 1 }
+              - column: { name: estado_actual, value: "EN_CAMINO" }
+              - column: { name: ubicacion_actual, value: "Centro de Distribucion Santiago" }
+              - column: { name: porcentaje_progreso, value: 50 }
+              - column: { name: requiere_firma, value: 1 }
+              - column: { name: fecha_actualizacion, value: "2026-06-14" }
+        - insert:
+            tableName: seguimientos
+            columns:
+              - column: { name: id, value: 2 }
+              - column: { name: envio_id, value: 2 }
+              - column: { name: estado_actual, value: "ENTREGADO" }
+              - column: { name: ubicacion_actual, value: "Valparaiso" }
+              - column: { name: porcentaje_progreso, value: 100 }
+              - column: { name: requiere_firma, value: 0 }
+              - column: { name: fecha_actualizacion, value: "2026-06-15" }
+        - insert:
+            tableName: seguimientos
+            columns:
+              - column: { name: id, value: 3 }
+              - column: { name: envio_id, value: 3 }
+              - column: { name: estado_actual, value: "ADUANA" }
+              - column: { name: ubicacion_actual, value: "Aeropuerto Miami" }
+              - column: { name: porcentaje_progreso, value: 30 }
+              - column: { name: requiere_firma, value: 1 }
+              - column: { name: fecha_actualizacion, value: "2026-06-16" }
+        - insert:
+            tableName: seguimientos
+            columns:
+              - column: { name: id, value: 4 }
+              - column: { name: envio_id, value: 4 }
+              - column: { name: estado_actual, value: "PREPARACION" }
+              - column: { name: ubicacion_actual, value: "Bodega Central" }
+              - column: { name: porcentaje_progreso, value: 10 }
+              - column: { name: requiere_firma, value: 1 }
+              - column: { name: fecha_actualizacion, value: "2026-06-17" }
+        - insert:
+            tableName: seguimientos
+            columns:
+              - column: { name: id, value: 5 }
+              - column: { name: envio_id, value: 5 }
+              - column: { name: estado_actual, value: "TRANSITO_INTERNACIONAL" }
+              - column: { name: ubicacion_actual, value: "Oceano Atlantico" }
+              - column: { name: porcentaje_progreso, value: 60 }
+              - column: { name: requiere_firma, value: 1 }
+              - column: { name: fecha_actualizacion, value: "2026-06-18" }

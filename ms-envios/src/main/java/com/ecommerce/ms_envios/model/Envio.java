@@ -1,15 +1,15 @@
 package com.ecommerce.ms_envios.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDate;
 
+
+@Getter
+@Setter
 @Entity
 @Table(name = "envios")
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Envio {

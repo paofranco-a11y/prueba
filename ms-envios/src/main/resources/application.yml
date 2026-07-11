@@ -1,22 +1,24 @@
+# Configuracion de parametros comunes
+
 spring:
   application:
-    name: ms-envios
-
+    name: MS-ENVIOS
+  profiles:
+    active: dev
   datasource:
-    url: jdbc:mysql://localhost:3306/prueba5?createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:3306/prueba5?serverTimezone=UTC&allowPublicKeyRetrieval=true&useSSL=false
     username: root
-    password: "" # Al estar vacía, se define como un String vacío explícito
-
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
-    show-sql: true
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQLDialect
 
-  liquibase:
-    change-log: classpath:db/changelog/db.changelog-master.yaml
-    parameters:
-      clear-checksums: true
-    clear-checksums: true
+
+server:
+  port: 8086
 
 springdoc:
   api-docs:
@@ -24,9 +26,6 @@ springdoc:
   swagger-ui:
     enabled: true
     path: /doc/swagger-ui.html
-
-server:
-  port: 8086
 
 eureka:
   client:
@@ -37,9 +36,45 @@ eureka:
   instance:
     prefer-ip-address: true
 
+---
+
+# Perfil desarrollo (DEV)
+
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    url: jdbc:mysql://localhost:3306/prueba5_dev?createDatabaseIfNotExist=true
+    username: root
+    password: ""
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+    clear-checksums: true
 
 logging:
   level:
-    com:
-      ecommerce:
-        msenvios: INFO
+    com.ecommerce.ms_envios: INFO
+
+---
+# Perfil de pruebas unitarias (TEST)
+
+spring:
+  config:
+    activate:
+      on-profile: test
+  datasource:
+    url: jdbc:mysql://localhost:3306/prueba5_test?createDatabaseIfNotExist=true
+    username: root
+    password: ""
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: none
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+    clear-checksums: true

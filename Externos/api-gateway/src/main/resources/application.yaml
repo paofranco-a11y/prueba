@@ -37,6 +37,13 @@ spring:
           predicates:
             - Path=Path=/api/v1/proveedores/**, /api/v2/proveedores/**, /api/v1/contratos/**, /api/v2/contratos/**
 
+        # 7. MICROSERVICIO ENVIOS
+        - id: envios-route
+          uri: lb://MS-ENVIOS
+          predicates:
+            - Path=Path=/api/v1/envios/**, /api/v2/envios/**, /api/v1/seguimiento/**, /api/v2/seguimiento/**
+
+
 eureka:
   client:
     service-url:
