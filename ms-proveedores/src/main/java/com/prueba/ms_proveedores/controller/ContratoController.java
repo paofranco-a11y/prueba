@@ -4,7 +4,7 @@ import com.prueba.ms_proveedores.dto.ContratoDTO;
 import com.prueba.ms_proveedores.dto.ContratoRequestDTO;
 import com.prueba.ms_proveedores.service.ContratoService;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,10 +13,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1")
+@RequiredArgsConstructor
 public class ContratoController {
 
-    @Autowired
-    private ContratoService contratoService;
+
+    private final ContratoService contratoService;
 
     @GetMapping("/contratos")
     public ResponseEntity<List<ContratoDTO>> listarTodos() {

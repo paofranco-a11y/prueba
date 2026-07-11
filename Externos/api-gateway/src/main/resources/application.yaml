@@ -31,6 +31,12 @@ spring:
           predicates:
             - Path=/api/inventarios/**
 
+        # 6. MICROSERVICIO PROVEEDORES
+        - id: proveedores-route
+          uri: lb://MS-PROVEEDOR
+          predicates:
+            - Path=Path=/api/v1/proveedores/**, /api/v2/proveedores/**, /api/v1/contratos/**, /api/v2/contratos/**
+
 eureka:
   client:
     service-url:

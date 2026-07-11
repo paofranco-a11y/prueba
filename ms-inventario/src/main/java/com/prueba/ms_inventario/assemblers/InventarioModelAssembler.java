@@ -17,7 +17,7 @@ public class InventarioModelAssembler implements RepresentationModelAssembler<In
         return convertir(dto);
     }
 
-    // Este es el metodo al que ControllerV2 llama para ensamblar los links Con este metodo se realiaza
+    // Este es el metodo al que ControllerV2 llama para ensamblar los links
     public EntityModel<InventarioResponseDTO> convertir(InventarioResponseDTO dto) {
         return EntityModel.of(dto,
                 linkTo(methodOn(InventarioControllerV2.class).obtenerPorId(dto.getId())).withSelfRel(),
