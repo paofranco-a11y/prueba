@@ -9,6 +9,7 @@ import com.ecommerce.ms_empleados.repository.EmpleadoRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -25,24 +26,27 @@ public class EmpleadoService {
         this.sucursalClient = sucursalClient;
     }
 
+    // ==========================================
+    // V1 - Orientado a DTO
+    // ==========================================
+
     public List<EmpleadoResponseDTO> findAll() {
-        log.info("Ejecutando método findAll para listar todos los empleados"); // Log obligatorio
+        log.info("Ejecutando método findAll para listar todos los empleados");
         return empleadoRepository.findAll().stream()
                 .map(EmpleadoMapper::toDTO)
                 .collect(Collectors.toList());
     }
 
     public EmpleadoResponseDTO findById(Integer id) {
-        log.info("Ejecutando método findById para el empleado con ID: {}", id); // Log obligatorio
+        log.info("Ejecutando método findById para el empleado con ID: {}", id);
         Empleado empleado = empleadoRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("ResourceNotFound: Empleado no encontrado con ID: " + id));
         return EmpleadoMapper.toDTO(empleado);
     }
 
     public EmpleadoResponseDTO save(EmpleadoRequestDTO dto) {
-        log.info("Ejecutando método save para registrar a: {}", dto.getNombreCompleto()); // Log obligatorio
+        log.info("Ejecutando método save para registrar a: {}", dto.getNombreCompleto());
         try {
-            // Comunicación Feign: Valida si la sucursal realmente existe antes de guardar
             sucursalClient.obtenerSucursalPorId(dto.getSucursalId());
             log.info("Sucursal ID: {} validada exitosamente vía FeignClient", dto.getSucursalId());
 
@@ -50,7 +54,7 @@ public class EmpleadoService {
             Empleado guardado = empleadoRepository.save(empleado);
             return EmpleadoMapper.toDTO(guardado);
         } catch (Exception e) {
-            log.error("Error crítico en la persistencia o validación de sucursal con Feign: {}", e.getMessage()); // Log error
+            log.error("Error crítico en la persistencia o validación de sucursal con Feign: {}", e.getMessage());
             throw new RuntimeException("No se pudo guardar el empleado. La sucursal no existe o el servicio no responde.");
         }
     }
@@ -58,9 +62,8 @@ public class EmpleadoService {
     public EmpleadoResponseDTO update(Integer id, EmpleadoRequestDTO dto) {
         log.info("Ejecutando método update para el empleado con ID: {}", id);
         Empleado existente = empleadoRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("ResourceNotFound: El empleado solicitado no existe")); // Gatilla 404
+                .orElseThrow(() -> new RuntimeException("ResourceNotFound: El empleado solicitado no existe"));
 
-        // Actualización de campos de manera individual conforme a la nota del examen
         existente.setNombreCompleto(dto.getNombreCompleto());
         existente.setCorreoElectronico(dto.getCorreoElectronico());
         existente.setSueldoBase(dto.getSueldoBase());
@@ -76,5 +79,49 @@ public class EmpleadoService {
         Empleado existente = empleadoRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("ResourceNotFound: El empleado no existe"));
         empleadoRepository.delete(existente);
+    }
+
+    // ==========================================
+    // V2 - Orientado a entidad, para HATEOAS
+    // ==========================================
+
+    public List<Empleado> findAllEntities() {
+        log.info("Ejecutando método HATEOAS findAllEntities");
+        return empleadoRepository.findAll();
+    }
+
+    public Empleado findEntityById(Integer id) {
+        log.info("Ejecutando método HATEOAS findEntityById para ID: {}", id);
+        return empleadoRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("ResourceNotFound: Empleado no encontrado con ID: " + id));
+    }
+
+    public Empleado saveEntity(EmpleadoRequestDTO dto) {
+        log.info("Ejecutando método HATEOAS saveEntity para: {}", dto.getNombreCompleto());
+        try {
+            sucursalClient.obtenerSucursalPorId(dto.getSucursalId());
+            log.info("Sucursal ID: {} validada vía Feign para HATEOAS", dto.getSucursalId());
+
+            Empleado empleado = EmpleadoMapper.toEntity(dto);
+            return empleadoRepository.save(empleado);
+        } catch (Exception e) {
+            log.error("Error crítico en HATEOAS saveEntity: {}", e.getMessage());
+            throw new RuntimeException("No se pudo guardar la entidad empleado. La sucursal no existe o el servicio no responde.");
+        }
+    }
+
+    public Empleado updateEntity(Integer id, EmpleadoRequestDTO dto) {
+        log.info("Ejecutando método HATEOAS updateEntity para ID: {}", id);
+        Empleado existente = empleadoRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("ResourceNotFound: El empleado solicitado no existe para modificar"));
+
+        existente.setNombreCompleto(dto.getNombreCompleto());
+        existente.setCorreoElectronico(dto.getCorreoElectronico());
+        existente.setSueldoBase(dto.getSueldoBase());
+        existente.setSucursalId(dto.getSucursalId());
+        existente.setEstaActivo(dto.isEstaActivo());
+        existente.setFechaIngreso(dto.getFechaIngreso());
+
+        return empleadoRepository.save(existente);
     }
 }
